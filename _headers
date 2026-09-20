@@ -4,3 +4,13 @@
   Permissions-Policy: camera=(), microphone=(), geolocation=()
   X-Frame-Options: DENY
   Content-Security-Policy: default-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'
+
+/assets/styles.css
+  Cache-Control: no-cache
+
+/assets/site.js
+  Cache-Control: no-cache
+
+/assets/tinyrental-live.css
+  Cache-Control: no-cache
+
