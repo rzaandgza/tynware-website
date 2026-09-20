@@ -21,6 +21,10 @@ window.TYNWARE_CONFIG = {
     tinyrental: {
       name: "TinyRental",
       version: "0.11.1",
+      category: "Rental management",
+      supportSummary: "Installation, trial/licensing, backups, diagnostics and recovery.",
+      privacySummary: "Inventory, customers, reservations, returns, issues, reports and related operational records are stored locally on the user's PC. TinyRental does not upload the operational database to Tynware during normal use.",
+      termsSummary: "Windows desktop rental-management software. Current lifetime license: up to two active devices. Core operational data is local-first. License activation and periodic validation require internet access.",
       productUrl: "/tinyrental/",
       supportUrl: "/tinyrental/support.html",
       downloadUrl: "",
@@ -72,6 +76,10 @@ window.TYNWARE_CONFIG = {
     offerdesk: {
       name: "Offer Desk",
       version: "0.9.1",
+      category: "Job pricing & quoting",
+      supportSummary: "Installation, language setup, PDF troubleshooting, backups and local data.",
+      privacySummary: "Customers, quotes, reusable library items, company settings and internal pricing data are stored locally on the user's PC. Offer Desk does not require a Tynware cloud workspace for its core workflow.",
+      termsSummary: "Windows desktop job-pricing and quoting software. The commercial product is planned as a one-time license. Release-specific activation details shown on the product page and checkout at purchase form part of the license terms.",
       productUrl: "/offerdesk/",
       supportUrl: "/offerdesk/support.html",
       downloadUrl: "",
