@@ -3,18 +3,29 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="TinyRental is simple Windows rental management software for small rental businesses. Track inventory, prevent double-bookings and manage returns without a subscription.">
+  <meta name="description" content="TinyRental is focused Windows rental management software for small rental businesses. Track inventory, prevent double-bookings, manage returns and export quotes and reports — without a subscription.">
+  <meta name="theme-color" content="#0b0d12">
   <title>TinyRental — Simple rental management for small businesses</title>
+  <link rel="canonical" href="https://tynware.com/tinyrental/">
+  <link rel="stylesheet" href="/assets/tinyrental-live.css?v=0.4.3">
   <link rel="stylesheet" href="/assets/styles.css">
   <script defer src="/assets/site.js"></script>
 </head>
 <body>
 <header class="container nav">
   <a class="wordmark" href="/">Tyn<span>ware</span></a>
-  <nav class="navlinks" aria-label="Main navigation"><a href="#features">Features</a><a href="#pricing">Pricing</a><a href="#faq">FAQ</a><a class="optional" href="/support.html">Support</a></nav>
+  <nav class="navlinks" aria-label="Main navigation">
+    <a href="#demo">Demo</a>
+    <a href="#features">Features</a>
+    <a href="#workflow">Workflow</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#faq">FAQ</a>
+    <a class="optional" href="/support.html">Support</a>
+  </nav>
 </header>
+
 <main>
-  <section class="container hero">
+  <section class="container hero product-hero">
     <span class="eyebrow">TinyRental · Windows</span>
     <h1>Rental management without the bloated platform.</h1>
     <p class="lede">Track inventory, reservations, availability, check-outs and returns in one focused Windows app. Prevent double-bookings, keep your data local, and pay once instead of adding another monthly subscription.</p>
@@ -25,51 +36,182 @@
     <p class="micro">Windows 11 · 14-day full-featured trial · Lifetime license · Up to 2 active devices</p>
   </section>
 
-  <section class="container section split">
-    <div>
-      <p class="kicker">Built for small operators</p>
-      <h2>Know what you own, what is booked, and what needs to come back.</h2>
-      <ul class="feature-list">
-        <li>Inventory and categories with quantity tracking.</li>
-        <li>Reservations with availability checks and double-booking protection.</li>
-        <li>Check-out and check-in flows with damaged or missing item tracking.</li>
-        <li>Quote PDFs, CSV export and verified backup/restore.</li>
-        <li>Weekly, monthly and annual booked-value reports with PDF export.</li>
-        <li>Local-first business data with no mandatory cloud account.</li>
-      </ul>
+  <section class="container hero-shot-wrap" aria-label="TinyRental reservations overview">
+    <button class="media-frame hero-shot" type="button" data-lightbox-src="/assets/screenshots/01_reservations_overview.png" data-lightbox-alt="TinyRental reservations overview with bookings across the year">
+      <img src="/assets/screenshots/01_reservations_overview.png" alt="TinyRental reservations overview with bookings across the year" width="1672" height="941" fetchpriority="high">
+      <span class="zoom-hint">Click to enlarge</span>
+    </button>
+  </section>
+
+  <section class="container section trust-strip" aria-label="TinyRental highlights">
+    <div><strong>No subscription</strong><span>€50 one-time</span></div>
+    <div><strong>Local-first</strong><span>Your rental data stays on your PC</span></div>
+    <div><strong>Conflict protection</strong><span>Availability checked before confirmation</span></div>
+    <div><strong>Recoverable</strong><span>Backup, restore and CSV export built in</span></div>
+  </section>
+
+  <section id="demo" class="container section demo-section" data-demo-section>
+    <div class="demo-heading">
+      <div>
+        <p class="kicker">80-second product demo</p>
+        <h2>See TinyRental in action.</h2>
+      </div>
+      <p class="lede">A quick walkthrough of inventory, reservations, conflict protection, returns, reports and quote PDFs.</p>
     </div>
-    <div class="screenshot"><div><strong>Product screenshot placeholder</strong><br>Replace with a real TinyRental screenshot before launch.<br><code>assets/tinyrental-main.webp</code></div></div>
+
+    <div class="demo-player-frame">
+      <video
+        class="demo-video"
+        controls
+        playsinline
+        preload="metadata"
+        poster="/assets/screenshots/01_reservations_overview.png"
+        aria-label="TinyRental product demo">
+        <source src="/assets/video/TYNWARE_TinyRental_Demo_v0.5.mp4" type="video/mp4">
+        Your browser does not support HTML5 video.
+      </video>
+    </div>
+    <p class="micro demo-note">No autoplay. Press play when you are ready.</p>
   </section>
 
   <section id="features" class="container section">
-    <p class="kicker">Core workflow</p><h2>From reservation to return.</h2>
-    <div class="grid-3">
-      <article class="card"><h3>See real availability</h3><p>Reserve quantities for a date range and let TinyRental detect conflicts before they become customer problems.</p></article>
-      <article class="card"><h3>Manage returns</h3><p>Check rentals out and back in, then record damaged or missing units so usable stock stays accurate.</p></article>
-      <article class="card"><h3>Keep useful records</h3><p>Create quote PDFs, inspect reserved inventory, export data and view simple booked-value reports by period.</p></article>
+    <p class="kicker">Built for small operators</p>
+    <h2>Know what you own, what is booked, and what needs to come back.</h2>
+    <div class="grid-3 feature-cards">
+      <article class="card"><h3>Inventory that stays useful</h3><p>Track categories, quantities, current availability and default rental prices without managing a spreadsheet beside your booking calendar.</p></article>
+      <article class="card"><h3>Reservations with guardrails</h3><p>Reserve quantities for a date range and let TinyRental catch inventory conflicts before they turn into customer problems.</p></article>
+      <article class="card"><h3>Returns that update stock</h3><p>Check rentals out and back in, then classify damaged or missing units so usable inventory remains accurate.</p></article>
+      <article class="card"><h3>Quotes without retyping</h3><p>Create clean quote PDFs from the reservation data already in TinyRental, including item quantities and pricing.</p></article>
+      <article class="card"><h3>Simple booked-value reports</h3><p>Review weekly, monthly or annual booked value by currency and export the report to PDF.</p></article>
+      <article class="card"><h3>Backup and export</h3><p>Create verified backup packages, restore safely and export user-readable CSV data when you need it.</p></article>
     </div>
   </section>
 
-  <section class="container section split">
-    <div class="card">
-      <p class="kicker">Local-first</p><h2>Your rental data stays on your PC.</h2>
-      <p class="lede">TinyRental stores operational data locally. Internet access is not required for the core rental workflow. Online communication is used for license activation and periodic license validation.</p>
-    </div>
-    <div class="card">
-      <p class="kicker">Recovery</p><h2>Backups are part of the product.</h2>
-      <p class="lede">Create verified backup packages, restore safely, and export business data to user-readable CSV files.</p>
+  <section id="workflow" class="container section story-list">
+    <article class="story-row">
+      <div class="story-copy">
+        <p class="kicker">Inventory</p>
+        <h2>See usable stock at a glance.</h2>
+        <p class="lede">TinyRental derives availability from confirmed reservations and unresolved damaged or missing inventory, so the number you see reflects what can actually be rented.</p>
+      </div>
+      <button class="media-frame" type="button" data-lightbox-src="/assets/screenshots/02_inventory.png" data-lightbox-alt="TinyRental inventory with quantities, availability and prices">
+        <img src="/assets/screenshots/02_inventory.png" alt="TinyRental inventory with quantities, availability and prices" width="1672" height="941" loading="lazy">
+        <span class="zoom-hint">Click to enlarge</span>
+      </button>
+    </article>
+
+    <article class="story-row reverse">
+      <div class="story-copy">
+        <p class="kicker">Reservation workflow</p>
+        <h2>Build the booking in one place.</h2>
+        <p class="lede">Choose the rental period, customer, event, currency and exact quantities. TinyRental checks the selected interval before a booking becomes confirmed stock demand.</p>
+      </div>
+      <button class="media-frame" type="button" data-lightbox-src="/assets/screenshots/03_new_reservation.png" data-lightbox-alt="TinyRental new reservation dialog with several rental items">
+        <img src="/assets/screenshots/03_new_reservation.png" alt="TinyRental new reservation dialog with several rental items" width="1672" height="941" loading="lazy">
+        <span class="zoom-hint">Click to enlarge</span>
+      </button>
+    </article>
+
+    <article class="story-row">
+      <div class="story-copy">
+        <p class="kicker">Conflict protection</p>
+        <h2>Stop double-bookings before they happen.</h2>
+        <p class="lede">If the selected period does not have enough stock, the reservation stays Draft and TinyRental tells you exactly which items are short.</p>
+      </div>
+      <button class="media-frame" type="button" data-lightbox-src="/assets/screenshots/04_inventory_conflict.png" data-lightbox-alt="TinyRental inventory conflict warning showing unavailable quantities">
+        <img src="/assets/screenshots/04_inventory_conflict.png" alt="TinyRental inventory conflict warning showing unavailable quantities" width="1672" height="941" loading="lazy">
+        <span class="zoom-hint">Click to enlarge</span>
+      </button>
+    </article>
+
+    <article class="story-row reverse">
+      <div class="story-copy">
+        <p class="kicker">Check-in</p>
+        <h2>Know what came back — and what did not.</h2>
+        <p class="lede">Record returned, damaged and missing quantities during check-in. Open issues automatically reduce usable stock until they are resolved.</p>
+      </div>
+      <button class="media-frame" type="button" data-lightbox-src="/assets/screenshots/05_check_in_damaged_items.png" data-lightbox-alt="TinyRental check-in dialog tracking damaged rental items">
+        <img src="/assets/screenshots/05_check_in_damaged_items.png" alt="TinyRental check-in dialog tracking damaged rental items" width="1672" height="941" loading="lazy">
+        <span class="zoom-hint">Click to enlarge</span>
+      </button>
+    </article>
+
+    <article class="story-row">
+      <div class="story-copy">
+        <p class="kicker">Reports</p>
+        <h2>Simple numbers without pretending to be accounting software.</h2>
+        <p class="lede">Review booked reservation value by week, month or year. Currencies stay separate, and reports can be exported to PDF for your records.</p>
+      </div>
+      <button class="media-frame" type="button" data-lightbox-src="/assets/screenshots/06_financial_reports.png" data-lightbox-alt="TinyRental monthly financial report with USD and EUR booked values">
+        <img src="/assets/screenshots/06_financial_reports.png" alt="TinyRental monthly financial report with USD and EUR booked values" width="1672" height="941" loading="lazy">
+        <span class="zoom-hint">Click to enlarge</span>
+      </button>
+    </article>
+  </section>
+
+  <section class="container section">
+    <div class="split practical-split">
+      <div class="card">
+        <p class="kicker">Local-first</p>
+        <h2>Your rental data stays on your PC.</h2>
+        <p class="lede">TinyRental stores operational data locally. Internet access is not required for the core rental workflow. Online communication is used for license activation and periodic license validation.</p>
+      </div>
+      <div class="card">
+        <p class="kicker">Recovery</p>
+        <h2>Backups are part of the product.</h2>
+        <p class="lede">Create verified backup packages, restore safely, and export business data to user-readable CSV files. Your data is not trapped behind a cloud account.</p>
+      </div>
     </div>
   </section>
 
-  <section id="pricing" class="container section">
-    <div class="card split">
-      <div><p class="kicker">Simple pricing</p><div class="price">€50 <small>one-time</small></div><p>Lifetime license for the purchased version. Up to 2 active devices. No recurring subscription.</p></div>
-      <div><ul class="feature-list"><li>14-day full-featured trial</li><li>2 device activations</li><li>Local data and backup/export</li><li>No mandatory Tynware account</li></ul><div class="actions"><a class="btn primary" data-checkout href="#">Checkout coming soon</a></div></div>
+  <section class="container section">
+    <p class="kicker">More of the workflow</p>
+    <h2>Useful detail when you need it.</h2>
+    <div class="gallery-grid">
+      <figure class="gallery-card">
+        <button class="media-frame" type="button" data-lightbox-src="/assets/screenshots/07_reservation_inventory.png" data-lightbox-alt="TinyRental reservation inventory details">
+          <img src="/assets/screenshots/07_reservation_inventory.png" alt="TinyRental reservation inventory details" width="1672" height="941" loading="lazy">
+          <span class="zoom-hint">Click to enlarge</span>
+        </button>
+        <figcaption><strong>Inspect exactly what was booked.</strong><span>Open a reservation and see its item snapshot, quantities and booked value.</span></figcaption>
+      </figure>
+      <figure class="gallery-card">
+        <button class="media-frame" type="button" data-lightbox-src="/assets/screenshots/08_quote_pdf.png" data-lightbox-alt="TinyRental quote PDF with multiple rental items">
+          <img src="/assets/screenshots/08_quote_pdf.png" alt="TinyRental quote PDF with multiple rental items" width="1672" height="941" loading="lazy">
+          <span class="zoom-hint">Click to enlarge</span>
+        </button>
+        <figcaption><strong>Generate a professional quote PDF.</strong><span>Use the reservation's stored item names and prices without re-entering the booking.</span></figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section id="pricing" class="container section pricing-section">
+    <div class="card pricing-card">
+      <div>
+        <p class="kicker">Simple pricing</p>
+        <div class="price">€50 <small>one-time</small></div>
+        <p>No recurring subscription. One TinyRental lifetime license currently allows up to two active devices.</p>
+      </div>
+      <div>
+        <ul class="feature-list">
+          <li>14-day full-featured trial</li>
+          <li>2 device activations</li>
+          <li>Inventory, reservations, returns and reports</li>
+          <li>Quote PDF + financial report PDF</li>
+          <li>Verified backup/restore + CSV export</li>
+          <li>No mandatory Tynware account</li>
+        </ul>
+        <div class="actions">
+          <a class="btn primary" data-download href="#">Download 14-day trial</a>
+          <a class="btn" data-checkout href="#">Buy TinyRental — €50</a>
+        </div>
+      </div>
     </div>
   </section>
 
   <section id="faq" class="container section">
-    <p class="kicker">FAQ</p><h2>Questions before you try it.</h2>
+    <p class="kicker">FAQ</p>
+    <h2>Questions before you try it.</h2>
     <div class="faq">
       <details><summary>Is TinyRental cloud software?</summary><p>No. TinyRental is a Windows desktop application and its core business data is stored locally on your PC.</p></details>
       <details><summary>Does TinyRental need an internet connection?</summary><p>The core inventory and rental workflow is local-first. Internet access is used for license activation and periodic validation.</p></details>
@@ -80,8 +222,21 @@
     </div>
   </section>
 
-  <section class="container section"><div class="notice">Pre-release website build: checkout and download links are intentionally disabled until the release installer and live Lemon Squeezy product are ready.</div></section>
+  <section class="container section">
+    <div class="notice">Pre-release website build: checkout and download links remain disabled until the signed release installer and live Lemon Squeezy product are ready. <a href="/downloads/">View release status</a>.</div>
+  </section>
 </main>
-<footer><div class="container footer-row"><span>© Tynware · TinyRental</span><div class="footer-links"><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a><a href="/support.html">Support</a></div></div></footer>
+
+<footer>
+  <div class="container footer-row">
+    <span>© Tynware · TinyRental</span>
+    <div class="footer-links"><a data-support-email href="mailto:support@tynware.com">support@tynware.com</a><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a><a href="/support.html">Support</a></div>
+  </div>
+</footer>
+
+<div class="lightbox" data-lightbox hidden aria-label="Screenshot viewer">
+  <button class="lightbox-close" type="button" aria-label="Close screenshot">×</button>
+  <img class="lightbox-image" data-lightbox-image alt="">
+</div>
 </body>
 </html>
