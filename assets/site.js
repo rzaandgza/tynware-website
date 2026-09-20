@@ -1,9 +1,12 @@
+const tynwareConfig = window.TYNWARE_CONFIG || {};
+const tynwareProducts = tynwareConfig.products || {};
+
 window.TYNWARE_SITE = {
-  tinyRentalCheckoutUrl: "",
-  tinyRentalDownloadUrl: "",
-  offerDeskCheckoutUrl: "",
-  offerDeskDownloadUrl: "",
-  supportEmail: "support@tynware.com"
+  tinyRentalCheckoutUrl: tynwareProducts.tinyrental?.checkoutUrl || "",
+  tinyRentalDownloadUrl: tynwareProducts.tinyrental?.downloadUrl || "",
+  offerDeskCheckoutUrl: tynwareProducts.offerdesk?.checkoutUrl || "",
+  offerDeskDownloadUrl: tynwareProducts.offerdesk?.downloadUrl || "",
+  supportEmail: tynwareConfig.supportEmail || "support@tynware.com"
 };
 
 function wireLink(selector, url, fallbackLabel) {
