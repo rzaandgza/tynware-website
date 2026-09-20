@@ -1,0 +1,22 @@
+# Operating system / editor files
+.DS_Store
+Thumbs.db
+Desktop.ini
+.vscode/
+.idea/
+
+# Local/runtime artifacts
+*.log
+*.tmp
+*.bak
+.env
+.env.*
+
+# Dependency/tool caches if introduced later
+node_modules/
+.wrangler/
+
+# Release/package artifacts
+*.zip
+downloads/*.exe
+downloads/*.msi
