@@ -37,7 +37,7 @@ window.TYNWARE_CONFIG = {
       logPath: "%LOCALAPPDATA%\\Tynware\\TinyRental\\logs\\tinyrental.log",
       backupLabel: "TinyRental backup package",
       systemRequirements: [
-        "Windows 11, x64 (64-bit). Windows 11 has no 32-bit/x86 edition.",
+        "Windows 11, x64 (64-bit).",
         "A standard x64 Intel/AMD PC capable of running supported Windows 11.",
         "Administrator approval during installation because TinyRental installs under Program Files.",
         "Internet access for license activation and periodic validation; core rental workflows remain local-first."
@@ -111,7 +111,7 @@ window.TYNWARE_CONFIG = {
       logPath: "",
       backupLabel: ".offerdesk-backup",
       systemRequirements: [
-        "Windows 11, x64 (64-bit). Windows 11 has no 32-bit/x86 edition.",
+        "Windows 11, x64 (64-bit).",
         "A standard x64 Intel/AMD PC capable of running supported Windows 11.",
         "A normal per-user Windows account; administrator rights are normally not required for installation.",
         "Core quoting, customer, PDF, backup and export workflows are local-first."
