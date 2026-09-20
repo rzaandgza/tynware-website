@@ -12,10 +12,28 @@ function supportCode(value) {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
+  const config = window.TYNWARE_CONFIG || {};
+  const products = config.products || {};
+
+  document.querySelectorAll("[data-support-hub]").forEach((hub) => {
+    hub.innerHTML = Object.values(products)
+      .map((product) => `
+        <article class="card product-card">
+          <div class="tag">${supportEscape(product.category || "Tynware software")}</div>
+          <div>
+            <h2>${supportEscape(product.name)}</h2>
+            <p>${supportEscape(product.supportSummary || "Product-specific installation and troubleshooting guidance.")}</p>
+          </div>
+          <div class="actions">
+            <a class="btn primary" href="${supportEscape(product.supportUrl)}">${supportEscape(product.name)} Support</a>
+          </div>
+        </article>`)
+      .join("");
+  });
+
   const root = document.querySelector("[data-product-support]");
   if (!root) return;
 
-  const config = window.TYNWARE_CONFIG || {};
   const key = root.dataset.productSupport;
   const product = config.products?.[key];
   if (!product) {
