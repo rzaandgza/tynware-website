@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://tynware.com/sitemap.xml
