@@ -14,3 +14,12 @@
 /assets/tinyrental-live.css
   Cache-Control: no-cache
 
+
+/assets/site-config.js
+  Cache-Control: no-cache
+
+/assets/legal.js
+  Cache-Control: no-cache
+
+/assets/support.js
+  Cache-Control: no-cache
