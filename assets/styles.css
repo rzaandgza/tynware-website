@@ -259,3 +259,32 @@ body.lightbox-open { overflow:hidden; }
     max-width:none;
   }
 }
+
+
+/* Product page parity additions */
+.demo-placeholder {
+  display:grid;
+  place-items:center;
+  text-align:center;
+  padding:2rem;
+  color:var(--muted);
+}
+.demo-placeholder > div {
+  display:grid;
+  gap:.35rem;
+}
+.demo-placeholder strong {
+  color:var(--text);
+  font-size:1.15rem;
+}
+.gallery-grid:has(.gallery-card:nth-child(3):last-child) .gallery-card:last-child {
+  grid-column:1 / -1;
+  width:min(100%, 760px);
+  margin-inline:auto;
+}
+@media (max-width:820px) {
+  .gallery-grid:has(.gallery-card:nth-child(3):last-child) .gallery-card:last-child {
+    grid-column:auto;
+    width:100%;
+  }
+}
