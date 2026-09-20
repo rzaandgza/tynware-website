@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-label="TinyRental">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="12" x2="0" y2="244" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#1b4768"/>
+      <stop offset="1" stop-color="#137670"/>
+    </linearGradient>
+  </defs>
+  <rect x="12" y="12" width="232" height="232" rx="52" fill="url(#bg)"/>
+  <g fill="none" stroke="#fff" stroke-width="11" stroke-linecap="round" stroke-linejoin="round">
+    <polyline points="75,98 128,68 181,98 128,129 75,98"/>
+    <polyline points="75,98 75,157 128,190 128,129"/>
+    <polyline points="181,98 181,157 128,190"/>
+  </g>
+  <line x1="128" y1="68" x2="128" y2="129" stroke="#e1f5f4" stroke-width="8" stroke-linecap="round"/>
+  <path d="M174 119 C211 139 211 181 176 207" fill="none" stroke="#69e8cc" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+  <polygon points="176,207 171,184 197,199" fill="#69e8cc"/>
+</svg>
