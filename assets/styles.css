@@ -227,3 +227,35 @@ body.lightbox-open { overflow:hidden; }
     grid-template-columns:1fr;
   }
 }
+
+
+/* Offer Desk canonical screenshot gallery */
+.offerdesk-gallery {
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:1rem;
+  margin-top:2rem;
+  align-items:start;
+}
+.offerdesk-gallery .screenshot-frame img {
+  aspect-ratio:auto;
+  object-fit:contain;
+}
+.offerdesk-gallery .screenshot-frame:last-child {
+  grid-column:1 / -1;
+}
+.offerdesk-gallery .screenshot-frame:last-child .shot-open {
+  max-width:760px;
+  margin-inline:auto;
+}
+@media (max-width:820px) {
+  .offerdesk-gallery {
+    grid-template-columns:1fr;
+  }
+  .offerdesk-gallery .screenshot-frame:last-child {
+    grid-column:auto;
+  }
+  .offerdesk-gallery .screenshot-frame:last-child .shot-open {
+    max-width:none;
+  }
+}
