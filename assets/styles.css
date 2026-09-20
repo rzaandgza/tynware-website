@@ -28,7 +28,7 @@ a { color:inherit; }
 h1 { font-size:clamp(2.6rem, 7vw, 5.4rem); line-height:.98; letter-spacing:-.055em; margin:1.2rem 0; max-width:13ch; }
 h2 { font-size:clamp(1.8rem, 4vw, 3rem); line-height:1.08; letter-spacing:-.035em; margin:0 0 1rem; }
 h3 { margin:.2rem 0 .55rem; letter-spacing:-.02em; }
-.lede { max-width:720px; font-size:clamp(1.05rem, 2vw, 1.28rem); color:var(--muted); }
+.lede { max-width:760px; font-size:clamp(1.05rem, 2vw, 1.28rem); color:var(--muted); }
 .actions { display:flex; flex-wrap:wrap; gap:.8rem; margin-top:2rem; }
 .btn { display:inline-flex; align-items:center; justify-content:center; min-height:48px; padding:.72rem 1.05rem; border-radius:11px; border:1px solid var(--line); text-decoration:none; font-weight:750; background:var(--panel-2); }
 .btn.primary { background:var(--accent); color:#07130e; border-color:transparent; }
@@ -36,15 +36,28 @@ h3 { margin:.2rem 0 .55rem; letter-spacing:-.02em; }
 .micro { margin-top:.8rem; color:var(--muted); font-size:.9rem; }
 .section { padding:4.5rem 0; }
 .grid-3 { display:grid; grid-template-columns:repeat(3,1fr); gap:1rem; }
+.product-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:1rem; }
 .card { background:linear-gradient(180deg, rgba(255,255,255,.025), transparent), var(--panel); border:1px solid var(--line); border-radius:18px; padding:1.35rem; }
 .card p { color:var(--muted); margin-bottom:0; }
-.product-card { display:flex; flex-direction:column; gap:1rem; min-height:265px; }
+.product-card { display:flex; flex-direction:column; gap:1rem; min-height:330px; }
 .product-card .tag { color:var(--accent-2); font-size:.82rem; font-weight:700; text-transform:uppercase; letter-spacing:.07em; }
+.product-card .actions { margin-top:auto; }
+.compact-list { display:grid; gap:.45rem; padding-left:1.15rem; color:var(--muted); }
 .split { display:grid; grid-template-columns:1.1fr .9fr; gap:2rem; align-items:start; }
 .feature-list { display:grid; gap:.75rem; padding:0; list-style:none; }
 .feature-list li { display:flex; gap:.75rem; color:var(--muted); }
 .feature-list li::before { content:"✓"; color:var(--accent); font-weight:900; }
 .screenshot { min-height:360px; display:grid; place-items:center; border:1px dashed #43506a; border-radius:18px; background:linear-gradient(135deg, #151c2a, #0f131c); color:var(--muted); text-align:center; padding:2rem; }
+.screenshot-gallery { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:1rem; margin-top:2rem; }
+.screenshot-frame { margin:0; overflow:hidden; border:1px solid var(--line); border-radius:18px; background:var(--panel); }
+.screenshot-frame img { display:block; width:100%; height:auto; aspect-ratio:16/10; object-fit:cover; background:#0f131c; }
+.screenshot-frame figcaption { padding:1rem; color:var(--muted); font-size:.94rem; }
+.shot-placeholder { aspect-ratio:16/10; display:grid; place-content:center; gap:.35rem; padding:1.5rem; text-align:center; background:linear-gradient(135deg,#182132,#0e121a); border-bottom:1px solid var(--line); color:var(--muted); }
+.shot-placeholder strong { color:var(--text); font-size:1.1rem; }
+.pending-shot { border-style:dashed; }
+.emphasis-card { min-height:100%; }
+.language-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:.7rem; }
+.language-grid span { border:1px solid var(--line); border-radius:11px; padding:.7rem .85rem; background:var(--panel-2); color:var(--muted); }
 .price { font-size:3.4rem; font-weight:850; letter-spacing:-.05em; line-height:1; }
 .price small { font-size:1rem; color:var(--muted); font-weight:600; letter-spacing:0; }
 .faq { display:grid; gap:.7rem; }
@@ -61,8 +74,11 @@ table { width:100%; border-collapse:collapse; min-width:620px; }
 th,td { padding:.85rem 1rem; text-align:left; border-bottom:1px solid var(--line); }
 th { color:var(--muted); font-size:.86rem; }
 code { background:#161c29; padding:.12rem .35rem; border-radius:5px; }
+@media (max-width: 900px) {
+  .screenshot-gallery { grid-template-columns:1fr; }
+}
 @media (max-width: 820px) {
-  .grid-3, .split { grid-template-columns:1fr; }
+  .grid-3, .split, .product-grid { grid-template-columns:1fr; }
   .hero { padding-top:4rem; }
   .navlinks .optional { display:none; }
 }
