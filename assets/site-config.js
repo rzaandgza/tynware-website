@@ -8,6 +8,7 @@ window.TYNWARE_CONFIG = {
     registrationNumber: "",
     taxId: "",
     registeredOffice: "",
+    phone: "",
     country: "Romania",
     effectiveDate: "21 September 2026"
   },
