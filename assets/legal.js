@@ -5,7 +5,8 @@ document.addEventListener("DOMContentLoaded", () => {
     legal.entityName &&
     legal.registrationNumber &&
     legal.taxId &&
-    legal.registeredOffice
+    legal.registeredOffice &&
+    legal.phone
   );
 
   document.querySelectorAll("[data-legal-entity]").forEach((el) => {
@@ -34,6 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
       registration: legal.registrationNumber,
       tax: legal.taxId,
       office: legal.registeredOffice,
+      phone: legal.phone,
       country: legal.country
     };
     Object.entries(fields).forEach(([key, value]) => {
