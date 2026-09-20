@@ -51,9 +51,14 @@ document.addEventListener("DOMContentLoaded", () => {
     lede.textContent = `Installation, recovery and troubleshooting guidance for ${product.name} ${product.version}.`;
   }
 
-  const installItems = product.installation
-    .map((step) => `<li>${supportEscape(step)}</li>`)
+  const renderList = (items) => (items || [])
+    .map((item) => `<li>${supportEscape(item)}</li>`)
     .join("");
+
+  const requirements = renderList(product.systemRequirements);
+  const beforeTroubleshooting = renderList(product.beforeTroubleshooting);
+  const safeRecovery = renderList(product.safeRecovery);
+  const installItems = renderList(product.installation);
 
   const troubleshootItems = product.troubleshooting
     .map((item) => `
@@ -88,9 +93,22 @@ document.addEventListener("DOMContentLoaded", () => {
     </section>
 
     <section class="support-section">
+      <p class="kicker">System requirements</p>
+      <h2>Supported environment.</h2>
+      <ul class="compact-list">${requirements}</ul>
+      <div class="notice">${supportEscape(product.compatibilityNote || "")}</div>
+    </section>
+
+    <section class="support-section">
       <p class="kicker">Installation</p>
       <h2>Install safely.</h2>
       <ol class="steps-list">${installItems}</ol>
+    </section>
+
+    <section class="support-section">
+      <p class="kicker">Before troubleshooting</p>
+      <h2>Protect the data first.</h2>
+      <ul class="compact-list">${beforeTroubleshooting}</ul>
     </section>
 
     <section class="support-section">
@@ -109,6 +127,12 @@ document.addEventListener("DOMContentLoaded", () => {
       <p class="kicker">Troubleshooting</p>
       <h2>Start with the safe checks.</h2>
       <div class="faq">${troubleshootItems}</div>
+    </section>
+
+    <section class="support-section">
+      <p class="kicker">Safe recovery</p>
+      <h2>Recover without creating a second problem.</h2>
+      <ul class="compact-list">${safeRecovery}</ul>
     </section>
 
     <section class="support-section">
