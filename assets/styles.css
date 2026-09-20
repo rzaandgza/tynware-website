@@ -135,19 +135,19 @@ code { background:#161c29; padding:.12rem .35rem; border-radius:5px; }
   z-index:1000;
   display:grid;
   place-items:center;
-  padding:2rem;
-  background:rgba(3,5,8,.94);
+  padding:.5rem;
+  background:rgba(3,5,8,.97);
   cursor:zoom-out;
 }
 .lightbox-image {
   display:block;
-  max-width:min(96vw,1800px);
-  max-height:92vh;
-  width:auto;
-  height:auto;
+  width:98vw;
+  height:96vh;
+  max-width:none;
+  max-height:none;
   object-fit:contain;
-  border-radius:10px;
-  box-shadow:0 30px 90px rgba(0,0,0,.55);
+  border-radius:0;
+  box-shadow:none;
   cursor:default;
 }
 .lightbox-close {
