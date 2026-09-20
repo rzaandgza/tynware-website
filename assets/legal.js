@@ -45,4 +45,28 @@ document.addEventListener("DOMContentLoaded", () => {
   document.querySelectorAll("[data-legal-pending]").forEach((el) => {
     el.hidden = entityReady;
   });
+
+  const products = Object.values(config.products || {});
+
+  document.querySelectorAll("[data-product-privacy-grid]").forEach((el) => {
+    el.innerHTML = products
+      .filter((product) => product.privacySummary)
+      .map((product) => `
+        <article class="card">
+          <h3>${product.name}</h3>
+          <p>${product.privacySummary}</p>
+        </article>`)
+      .join("");
+  });
+
+  document.querySelectorAll("[data-product-terms-grid]").forEach((el) => {
+    el.innerHTML = products
+      .filter((product) => product.termsSummary)
+      .map((product) => `
+        <article class="card">
+          <h3>${product.name}</h3>
+          <p>${product.termsSummary}</p>
+        </article>`)
+      .join("");
+  });
 });
