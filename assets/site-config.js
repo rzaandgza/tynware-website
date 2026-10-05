@@ -19,7 +19,7 @@ window.TYNWARE_CONFIG = {
     privacyUrl: "https://www.lemonsqueezy.com/privacy"
   },
   products: {
-    tinyrental: {
+    tynrent: {
       name: "TynRent",
       version: "0.11.1",
       category: "Rental management",
@@ -34,7 +34,7 @@ window.TYNWARE_CONFIG = {
       installScope: "Machine-wide installation; Windows administrator approval is required.",
       installPath: "%ProgramFiles%\\Tynware\\TynRent",
       dataPath: "%LOCALAPPDATA%\\Tynware\\TynRent",
-      logPath: "%LOCALAPPDATA%\\Tynware\\TynRent\\logs\\tinyrental.log",
+      logPath: "%LOCALAPPDATA%\\Tynware\\TynRent\\logs\\tynrent.log",
       backupLabel: "TynRent backup package",
       systemRequirements: [
         "Windows 11, x64 (64-bit).",
