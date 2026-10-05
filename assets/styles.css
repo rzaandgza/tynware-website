@@ -175,7 +175,7 @@ body.lightbox-open { overflow:hidden; }
 }
 
 
-/* TinyRental highlight cards + direct screenshot click */
+/* TynRent highlight cards + direct screenshot click */
 .trust-strip {
   display:grid;
   grid-template-columns:repeat(4,minmax(0,1fr));
