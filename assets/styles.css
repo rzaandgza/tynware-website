@@ -362,3 +362,10 @@ body.lightbox-open { overflow:hidden; }
   .resource-grid-3 { grid-template-columns:1fr; }
   .resource-article-header { padding-top:2.5rem; }
 }
+
+
+/* Resources comparison */
+.comparison-table td:first-child { color:var(--text); font-weight:700; }
+.comparison-table td:nth-child(2) { color:var(--muted); }
+.comparison-table td:nth-child(3) { color:#d7efe3; }
+.comparison-summary { margin:1.2rem 0 2.5rem !important; padding:.9rem 1rem; border-left:3px solid var(--accent); background:rgba(114,227,179,.06); color:var(--text) !important; }
