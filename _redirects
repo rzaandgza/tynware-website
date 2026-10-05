@@ -1,0 +1,4 @@
+/tinyrental /tynrent/ 301
+/tinyrental/ /tynrent/ 301
+/tinyrental/* /tynrent/:splat 301
+/resources/tinyrental/* /resources/tynrent/:splat 301

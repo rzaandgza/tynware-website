@@ -1,9 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://tynware.com/</loc></url>
-  <url><loc>https://tynware.com/tinyrental/</loc></url>
+  <url><loc>https://tynware.com/tynrent/</loc></url>
   <url><loc>https://tynware.com/offerdesk/</loc></url>
+  <url><loc>https://tynware.com/resources/</loc></url>
+  <url><loc>https://tynware.com/resources/tynrent/equipment-rental-spreadsheet-template/</loc></url>
+  <url><loc>https://tynware.com/support.html</loc></url>
+  <url><loc>https://tynware.com/tynrent/support.html</loc></url>
+  <url><loc>https://tynware.com/offerdesk/support.html</loc></url>
+  <url><loc>https://tynware.com/company.html</loc></url>
   <url><loc>https://tynware.com/privacy.html</loc></url>
   <url><loc>https://tynware.com/terms.html</loc></url>
-  <url><loc>https://tynware.com/support.html</loc></url>
+  <url><loc>https://tynware.com/refunds.html</loc></url>
 </urlset>

@@ -1,6 +1,6 @@
 # Tynware Website Starter v0.1
 
-Static, dependency-free launch site for `tynware.com` and TinyRental.
+Static, dependency-free launch site for `tynware.com` and TynRent.
 
 ## Why static
 
@@ -12,7 +12,7 @@ Static, dependency-free launch site for `tynware.com` and TinyRental.
 
 ## Before publishing
 
-1. Replace the TinyRental screenshot placeholder with real screenshots.
+1. Replace the TynRent screenshot placeholder with real screenshots.
 2. Set `checkoutUrl` in `assets/site.js` to the **live** Lemon Squeezy checkout URL.
 3. Set `downloadUrl` in `assets/site.js` to the final approved installer URL.
 4. Confirm `support@tynware.com` exists or change `supportEmail`.
@@ -47,7 +47,7 @@ Recommended sequence:
 ## Structure
 
 - `/` — Tynware portfolio homepage
-- `/tinyrental/` — TinyRental landing page
+- `/tynrent/` — TynRent landing page
 - `/privacy.html`
 - `/terms.html`
 - `/support.html`

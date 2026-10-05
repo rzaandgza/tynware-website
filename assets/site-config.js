@@ -19,48 +19,48 @@ window.TYNWARE_CONFIG = {
     privacyUrl: "https://www.lemonsqueezy.com/privacy"
   },
   products: {
-    tinyrental: {
-      name: "TinyRental",
+    tynrent: {
+      name: "TynRent",
       version: "0.11.1",
       category: "Rental management",
       supportSummary: "Installation, trial/licensing, backups, diagnostics and recovery.",
-      privacySummary: "Inventory, customers, reservations, returns, issues, reports and related operational records are stored locally on the user's PC. TinyRental does not upload the operational database to Tynware during normal use.",
+      privacySummary: "Inventory, customers, reservations, returns, issues, reports and related operational records are stored locally on the user's PC. TynRent does not upload the operational database to Tynware during normal use.",
       termsSummary: "Windows 11 x64 rental-management software. Current lifetime license: up to two active devices. Core operational data is local-first. License activation and periodic validation require internet access.",
-      productUrl: "/tinyrental/",
-      supportUrl: "/tinyrental/support.html",
+      productUrl: "/tynrent/",
+      supportUrl: "/tynrent/support.html",
       downloadUrl: "",
       checkoutUrl: "",
       platform: "Windows 11 · x64 (64-bit)",
       installScope: "Machine-wide installation; Windows administrator approval is required.",
-      installPath: "%ProgramFiles%\\Tynware\\TinyRental",
-      dataPath: "%LOCALAPPDATA%\\Tynware\\TinyRental",
-      logPath: "%LOCALAPPDATA%\\Tynware\\TinyRental\\logs\\tinyrental.log",
-      backupLabel: "TinyRental backup package",
+      installPath: "%ProgramFiles%\\Tynware\\TynRent",
+      dataPath: "%LOCALAPPDATA%\\Tynware\\TynRent",
+      logPath: "%LOCALAPPDATA%\\Tynware\\TynRent\\logs\\tynrent.log",
+      backupLabel: "TynRent backup package",
       systemRequirements: [
         "Windows 11, x64 (64-bit).",
         "A standard x64 Intel/AMD PC capable of running supported Windows 11.",
-        "Administrator approval during installation because TinyRental installs under Program Files.",
+        "Administrator approval during installation because TynRent installs under Program Files.",
         "Internet access for license activation and periodic validation; core rental workflows remain local-first."
       ],
       compatibilityNote: "Windows 10 is not part of the official public-release support matrix because it has not been validated for this release and Microsoft ended general Windows 10 support in October 2025. macOS is not currently available.",
       beforeTroubleshooting: [
-        "Create a current TinyRental backup if the application still opens.",
-        "Close TinyRental before reinstalling, restoring or changing application files.",
+        "Create a current TynRent backup if the application still opens.",
+        "Close TynRent before reinstalling, restoring or changing application files.",
         "Do not delete or rename the Tynware data folder to troubleshoot startup or licensing.",
-        "Write down the exact error message and TinyRental version before changing anything."
+        "Write down the exact error message and TynRent version before changing anything."
       ],
       safeRecovery: [
-        "Prefer TinyRental's built-in backup and restore tools over manual database-file replacement.",
+        "Prefer TynRent's built-in backup and restore tools over manual database-file replacement.",
         "Keep the original backup file unchanged until the restore is confirmed.",
-        "Uninstalling TinyRental intentionally preserves the local business-data folder.",
+        "Uninstalling TynRent intentionally preserves the local business-data folder.",
         "If both current and legacy data locations appear populated or the expected data folder is unclear, stop and contact support before moving files."
       ],
       installation: [
-        "Download TinyRental only from the official Tynware product page.",
+        "Download TynRent only from the official Tynware product page.",
         "For the public release, right-click the installer → Properties → Digital Signatures and verify a valid signature from the Tynware legal publisher shown on the Company page.",
-        "Open the installer. Windows will request administrator approval because TinyRental installs under Program Files.",
+        "Open the installer. Windows will request administrator approval because TynRent installs under Program Files.",
         "Choose whether you want the optional desktop shortcut, then complete installation.",
-        "Launch TinyRental from the Start menu or shortcut. The 14-day trial begins on first run."
+        "Launch TynRent from the Start menu or shortcut. The 14-day trial begins on first run."
       ],
       troubleshooting: [
         {
@@ -68,8 +68,8 @@ window.TYNWARE_CONFIG = {
           text: "Do not bypass warnings for an installer obtained from another source. Download a fresh copy from tynware.com and verify its digital signature. If the official signed installer is still blocked, contact support with the exact Windows message."
         },
         {
-          title: "TinyRental does not start",
-          text: "Restart Windows once, then try the installed Start-menu shortcut. If it still fails, send support your TinyRental version, Windows version, the exact error message and the diagnostic log path shown below."
+          title: "TynRent does not start",
+          text: "Restart Windows once, then try the installed Start-menu shortcut. If it still fails, send support your TynRent version, Windows version, the exact error message and the diagnostic log path shown below."
         },
         {
           title: "Activation or validation fails",
@@ -77,15 +77,15 @@ window.TYNWARE_CONFIG = {
         },
         {
           title: "Data looks missing after reinstall",
-          text: "Uninstalling TinyRental does not remove the local business-data folder. Use Help → Open data folder to confirm the active location. Do not manually replace the live database; use the built-in backup and restore tools."
+          text: "Uninstalling TynRent does not remove the local business-data folder. Use Help → Open data folder to confirm the active location. Do not manually replace the live database; use the built-in backup and restore tools."
         },
         {
           title: "A restore or backup fails",
-          text: "Keep the original backup file unchanged and try a different writable destination. TinyRental validates backups before replacing live data and creates recovery material around restore operations. If the error repeats, send the exact message to support."
+          text: "Keep the original backup file unchanged and try a different writable destination. TynRent validates backups before replacing live data and creates recovery material around restore operations. If the error repeats, send the exact message to support."
         }
       ],
       diagnostics: [
-        "TinyRental version",
+        "TynRent version",
         "Windows version",
         "Exact error message",
         "What action you were performing",
