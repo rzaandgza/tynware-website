@@ -131,7 +131,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   const iconForName = (name) => {
-    if (name === "TinyRental") return tinyRentalIcon;
+    if (name === "TynRent") return tinyRentalIcon;
     if (name === "Offer Desk") return offerDeskIcon;
     return null;
   };
@@ -154,8 +154,8 @@ document.addEventListener("DOMContentLoaded", () => {
   let productName = null;
   let productIcon = null;
 
-  if (path.startsWith("/tinyrental/")) {
-    productName = "TinyRental";
+  if (path.startsWith("/tynrent/")) {
+    productName = "TynRent";
     productIcon = tinyRentalIcon;
   } else if (path.startsWith("/offerdesk/")) {
     productName = "Offer Desk";
