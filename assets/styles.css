@@ -375,31 +375,27 @@ body.lightbox-open { overflow:hidden; }
 .wordmark {
   display:inline-flex;
   align-items:center;
-  gap:.58rem;
+  gap:.72rem;
   flex:0 0 auto;
   min-width:max-content;
   text-decoration:none;
   font-weight:800;
-  letter-spacing:-.04em;
-  font-size:1.35rem;
+  letter-spacing:-.045em;
+  font-size:1.62rem;
   line-height:1;
 }
-.wordmark span {
-  display:none;
-}
-.wordmark::before {
-  content:"";
+.wordmark-mark {
   display:block;
-  width:38px;
-  height:38px;
-  flex:0 0 38px;
-  background:url("/assets/brand/tynware-mark-light.png") center / contain no-repeat;
+  width:46px;
+  height:46px;
+  flex:0 0 46px;
+  object-fit:contain;
 }
-.wordmark::after {
-  content:"Tynware";
+.wordmark .wordmark-name {
+  display:inline;
   color:var(--text);
 }
 @media (max-width:520px) {
-  .wordmark { gap:.45rem; font-size:1.16rem; }
-  .wordmark::before { width:34px; height:34px; flex-basis:34px; }
+  .wordmark { gap:.55rem; font-size:1.4rem; }
+  .wordmark-mark { width:40px; height:40px; flex-basis:40px; }
 }
