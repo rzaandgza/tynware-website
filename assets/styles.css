@@ -393,7 +393,7 @@ body.lightbox-open { overflow:hidden; }
   width:38px;
   height:38px;
   flex:0 0 38px;
-  background:url("/assets/brand/tynware-mark-light.svg") center / contain no-repeat;
+  background:url("/assets/brand/tynware-mark-light.png") center / contain no-repeat;
 }
 .wordmark::after {
   content:"Tynware";
