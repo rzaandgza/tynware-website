@@ -4,10 +4,11 @@ window.TYNWARE_CONFIG = {
   supportEmail: "support@tynware.com",
   privacyEmail: "support@tynware.com",
   legal: {
-    entityName: "",
-    registrationNumber: "",
-    taxId: "",
-    registeredOffice: "",
+    entityName: "TYNWARE SOFT S.R.L.",
+    registrationNumber: "J2026058127007",
+    euId: "ROONRC.J2026058127007",
+    taxId: "55711744",
+    registeredOffice: "Str. Justinian Teculescu nr. 13, Covasna, jud. Covasna, România",
     phone: "",
     country: "Romania",
     effectiveDate: "21 September 2026"
