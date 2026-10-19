@@ -18,6 +18,11 @@ document.addEventListener("DOMContentLoaded", () => {
   document.querySelectorAll("[data-legal-effective-date]").forEach((el) => {
     el.textContent = legal.effectiveDate || "";
   });
+  document.querySelectorAll("[data-contact-email]").forEach((el) => {
+    const email = config.contactEmail || "contact@tynware.com";
+    el.textContent = email;
+    el.href = `mailto:${email}`;
+  });
   document.querySelectorAll("[data-privacy-email]").forEach((el) => {
     const email = config.privacyEmail || config.supportEmail || "support@tynware.com";
     el.textContent = email;

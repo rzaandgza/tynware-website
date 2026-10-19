@@ -1,6 +1,7 @@
 window.TYNWARE_CONFIG = {
   brandName: "Tynware",
   siteUrl: "https://tynware.com",
+  contactEmail: "contact@tynware.com",
   supportEmail: "support@tynware.com",
   privacyEmail: "support@tynware.com",
   legal: {
