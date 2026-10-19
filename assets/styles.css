@@ -305,6 +305,7 @@ body.lightbox-open { overflow:hidden; }
 .path-list { display:grid; gap:.65rem; margin:1.25rem 0 0; }
 .legal-identity > div,
 .path-list > div { display:grid; grid-template-columns:minmax(150px,.35fr) 1fr; gap:1rem; padding:.8rem 0; border-bottom:1px solid var(--line); }
+.legal-identity[hidden], .legal-identity > div[hidden] { display:none; }
 .legal-identity dt,
 .path-list dt { color:var(--muted); font-weight:700; }
 .legal-identity dd,
