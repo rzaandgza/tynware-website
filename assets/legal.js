@@ -5,9 +5,9 @@ document.addEventListener("DOMContentLoaded", () => {
     legal.entityName &&
     legal.registrationNumber &&
     legal.taxId &&
-    legal.registeredOffice &&
-    legal.phone
+    legal.registeredOffice
   );
+  const launchContactReady = Boolean(legal.phone);
 
   document.querySelectorAll("[data-legal-entity]").forEach((el) => {
     el.textContent = entityReady ? legal.entityName : (config.brandName || "Tynware");
@@ -33,6 +33,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const fields = {
       entity: legal.entityName,
       registration: legal.registrationNumber,
+      euid: legal.euId,
       tax: legal.taxId,
       office: legal.registeredOffice,
       phone: legal.phone,
@@ -42,10 +43,12 @@ document.addEventListener("DOMContentLoaded", () => {
       const target = el.querySelector(`[data-legal-${key}]`);
       if (target) target.textContent = value || "—";
     });
+    const phoneField = el.querySelector("[data-legal-phone]");
+    if (phoneField) phoneField.closest("div").hidden = !legal.phone;
   });
 
   document.querySelectorAll("[data-legal-pending]").forEach((el) => {
-    el.hidden = entityReady;
+    el.hidden = entityReady && launchContactReady;
   });
 
   const products = Object.values(config.products || {});
