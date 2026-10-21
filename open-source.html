@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Open-source and third-party notices, source code and LGPL library replacement information for Tynware desktop products.">
+  <link rel="canonical" href="https://tynware.com/open-source.html">
+  <title>Open-source components — Tynware</title>
+  <link rel="stylesheet" href="/assets/styles.css?v=20261019-company">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon.png">
+</head>
+<body>
+<header class="container nav">
+  <a class="wordmark" href="/" aria-label="Tynware home"><img class="wordmark-mark" src="/assets/brand/tynware-mark-light.png" alt="" width="96" height="96"><span class="wordmark-name">Tynware</span></a>
+  <nav class="navlinks" aria-label="Main navigation">
+    <a href="/tynrent/">TynRent</a>
+    <a href="/offerdesk/">Offer Desk</a>
+    <a href="/resources/">Resources</a>
+    <a href="/support.html">Support</a>
+  </nav>
+</header>
+<main class="container legal-page">
+  <p class="kicker">Third-party software</p>
+  <h1>Open-source licenses and corresponding source</h1>
+  <p class="lede">Certain Tynware desktop applications include independently licensed libraries. These third-party licenses remain effective alongside the Tynware application license.</p>
+
+  <section class="legal-section">
+    <h2>TynRent — Qt for Python 6.11.2 (release preparation)</h2>
+    <p>TynRent is being prepared for Windows x64 distribution using dynamically linked Qt 6.11.2, PySide6 and shiboken6 libraries. The applicable LGPLv3 and third-party license terms preserve recipients' rights to obtain and modify covered library source code, substitute compatible LGPL libraries and debug those modifications. Tynware's proprietary application license does not override those rights.</p>
+    <p>The current unsigned QA installer includes original GNU LGPLv3/GPLv3 license texts, upstream notices, an offline <strong>LIBRARY_REPLACEMENT.txt</strong> guide and a source-derived third-party attribution candidate inventory. The original upstream Qt/PySide6 6.11.2 source archives below have been published on Tynware's Cloudflare R2 and their complete public downloads checked against pinned SHA-256 values.</p>
+    <h3>Original upstream sources for TynRent 0.11.1 — Qt 6.11.2</h3>
+    <ul class="legal-list">
+      <li><a href="https://sources.tynware.com/tynrent/0.11.1/qt-6.11.2/qtbase-everywhere-src-6.11.2.tar.xz">Qt Base 6.11.2 (tar.xz)</a> — SHA-256: <code>5b2e00eccaf5a4d8c14134ffa0ea8dfd0a35ae1ffc7f8d87fa4305a1ed23cf22</code>.</li>
+      <li><a href="https://sources.tynware.com/tynrent/0.11.1/qt-6.11.2/qtsvg-everywhere-src-6.11.2.tar.xz">Qt SVG 6.11.2 (tar.xz)</a> — SHA-256: <code>d594337feca84c26fb67fe87b85e6a5c12fda404b611d905f9d138210c311876</code>.</li>
+      <li><a href="https://sources.tynware.com/tynrent/0.11.1/qt-6.11.2/qtimageformats-everywhere-src-6.11.2.tar.xz">Qt Image Formats 6.11.2 (tar.xz)</a> — SHA-256: <code>cecd8900f34b6550076309bc94f62f828008b633a4239e0a08c86788f41001f8</code>.</li>
+      <li><a href="https://sources.tynware.com/tynrent/0.11.1/qt-6.11.2/pyside-setup-everywhere-src-6.11.2.tar.xz">PySide6 / shiboken6 6.11.2 source (tar.xz)</a> — SHA-256: <code>cba47efbaad1bedd529725cbc14e21f156c7a19366f07b3edfbb076ffd7afdf8</code>.</li>
+    </ul>
+    <p>These are the original, unmodified upstream source snapshots. Publication of these archives alone does not certify their exact correspondence to every compiled third-party component in TynRent's current Qt Windows wheels. Build configuration, applicable third-party notices and actual compatibility with interface-compatible replacement shared libraries must be considered for the final packaged release. An additional Qt recompilation test is not a separate LGPLv3 requirement.</p>
+    <p>This section remains a pre-release disclosure and <strong>is not LGPL commercial-release sign-off</strong>. Tynware will publish any additional required corresponding-source/build information and preserve users' LGPL replacement and debugging rights before distributing the final signed commercial installer. Questions about sources or license notices can be sent to <a href="mailto:support@tynware.com">support@tynware.com</a>.</p>
+  </section>
+
+  <section class="legal-section">
+    <h2>Offer Desk — Qt for Python 6.12.0</h2>
+    <p>Offer Desk uses Qt for Python (PySide6), shiboken6 and Qt 6.12 shared libraries. The open-source Qt libraries used under LGPLv3 carry rights separate from Tynware's proprietary application code, including the right to modify and replace LGPL-covered libraries with compatible versions.</p>
+    <p>The installed application includes a <strong>THIRD_PARTY_NOTICES</strong> folder containing the applicable license texts, original package notices and an offline <strong>LIBRARY_REPLACEMENT.txt</strong> guide. The installation's Qt DLLs are dynamically linked; see that guide for the installed paths and replacement instructions.</p>
+  </section>
+
+  <section class="legal-section">
+    <h2>Corresponding source archives — Qt / PySide6 6.12.0</h2>
+    <p>These downloads provide the publicly available upstream source snapshots that correspond to the Qt/PySide6 version family used in Offer Desk. They supplement, rather than replace, the source/build information and original notices accompanying the relevant software release.</p>
+    <ul class="legal-list">
+      <li><a href="https://sources.tynware.com/offerdesk/1.0.0/qt/qt-everywhere-src-6.12.0.tar.xz">Qt Framework 6.12.0 source archive (tar.xz)</a>. SHA-256: <code>98ff4f44bac6ec3e1e62ee2a4316ae0e3d15badb015d753cc0268a20db52f165</code>.</li>
+      <li><a href="https://sources.tynware.com/offerdesk/1.0.0/qt/pyside-setup-everywhere-src-6.12.0.tar.xz">Qt for Python / PySide6 / shiboken6 6.12.0 source archive (tar.xz)</a>. SHA-256: <code>099c1a597cf33c1b000e11cf68a0b82d216fb802bf81726efc720394f10c7751</code>.</li>
+    </ul>
+    <p>The archives' exact original SHA-256 values are provided so recipients can verify downloaded copies. For further details about the build of an installed version or to request source material and license notices, email <a href="mailto:support@tynware.com">support@tynware.com</a> with the Offer Desk version.</p>
+  </section>
+
+  <section class="legal-section">
+    <h2>Independent license rights</h2>
+    <p>The GNU LGPLv3 and applicable third-party licenses govern their covered components. The <a href="/terms.html">Tynware Terms</a> do not remove the rights they grant. Qt and the Qt logo are trademarks of The Qt Company Ltd.; Tynware is not affiliated with or endorsed by The Qt Company.</p>
+  </section>
+</main>
+<footer><div class="container footer-row"><span>© Tynware</span><div class="footer-links"><a href="/resources/">Resources</a><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a><a href="/company.html">Company</a><a href="/refunds.html">Refunds</a></div></div></footer>
+</body>
+</html>
