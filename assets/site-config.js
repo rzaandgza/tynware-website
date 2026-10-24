@@ -11,8 +11,9 @@ window.TYNWARE_CONFIG = {
     taxId: "55711744",
     registeredOffice: "Str. Justinian Teculescu nr. 13, Covasna, jud. Covasna, România",
     phone: "",
+    primaryActivity: "CAEN 5829 — Activități de editare a altor produse software",
     country: "Romania",
-    effectiveDate: "21 September 2026"
+    effectiveDate: "24 October 2026"
   },
   commerce: {
     merchantOfRecord: "Lemon Squeezy",
