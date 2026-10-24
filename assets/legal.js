@@ -41,6 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
       euid: legal.euId,
       tax: legal.taxId,
       office: legal.registeredOffice,
+      activity: legal.primaryActivity,
       phone: legal.phone,
       country: legal.country
     };
