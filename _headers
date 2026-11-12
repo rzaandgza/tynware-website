@@ -3,7 +3,7 @@
   Referrer-Policy: strict-origin-when-cross-origin
   Permissions-Policy: camera=(), microphone=(), geolocation=()
   X-Frame-Options: DENY
-  Content-Security-Policy: default-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'
+  Content-Security-Policy: default-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self' https://www.googletagmanager.com; img-src 'self' data: https://*.google-analytics.com https://*.googletagmanager.com; connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com; frame-ancestors 'none'; base-uri 'self'
 
 /assets/styles.css
   Cache-Control: no-cache
@@ -23,3 +23,18 @@
 
 /assets/support.js
   Cache-Control: no-cache
+
+/assets/measurement-config.js
+  Cache-Control: no-cache
+
+/assets/measurement.js
+  Cache-Control: no-cache
+
+/assets/measurement.css
+  Cache-Control: no-cache
+
+/assets/product-performance.css
+  Cache-Control: no-cache
+
+/assets/previews/*
+  Cache-Control: public, max-age=604800

@@ -1,0 +1,3 @@
+/* Reserve product identity space before scripts run to avoid moving the hero. */
+.product-hero .hero-product-identity { display:flex; align-items:center; min-height:40px; font-weight:800; }
+.product-hero .hero-product-identity img { display:block; width:40px; height:40px; }

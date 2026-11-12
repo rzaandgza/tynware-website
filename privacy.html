@@ -12,6 +12,9 @@
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="shortcut icon" href="/favicon.ico">
   <link rel="icon" type="image/png" sizes="96x96" href="/favicon.png">
+  <link rel="stylesheet" href="/assets/measurement.css?v=20261113-analytics1">
+  <script defer src="/assets/measurement-config.js?v=20261113-analytics1"></script>
+  <script defer src="/assets/measurement.js?v=20261113-analytics2"></script>
 </head>
 <body>
 <header class="container nav">
@@ -28,7 +31,7 @@
   <p class="kicker">Privacy notice</p>
   <h1>Privacy at Tynware</h1>
   <p class="lede">Tynware builds local-first desktop software. Core business records created inside our current desktop products stay on your Windows PC unless you choose to export, back up or send information elsewhere.</p>
-  <p class="legal-meta">Last updated: <span data-legal-effective-date>21 September 2026</span></p>
+  <p class="legal-meta">Last updated: 13 November 2026</p>
 
   <div class="notice" data-legal-pending>
     Tynware's registered company details are shown below. Paid checkout remains disabled while remaining direct-contact and commercial release requirements are completed.
@@ -91,15 +94,20 @@
           <tr><td>Provide downloads, licenses and purchased products</td><td>Order and license data</td><td>Performance of a contract and steps requested before a contract</td></tr>
           <tr><td>Activate and validate licenses</td><td>License and activation metadata</td><td>Performance of a contract and legitimate interests in preventing license abuse</td></tr>
           <tr><td>Answer support requests</td><td>Contact details, correspondence, diagnostics</td><td>Performance of a contract or legitimate interests in supporting users</td></tr>
+          <tr><td>Understand website visits and product interest</td><td>Page views, browser/device information and interactions described below</td><td>Your consent for optional website analytics</td></tr>
           <tr><td>Meet legal, tax, fraud-prevention or dispute obligations</td><td>Relevant order, contact and transaction records</td><td>Legal obligation and legitimate interests in establishing or defending legal claims</td></tr>
         </tbody>
       </table>
     </div>
   </section>
 
-  <section class="legal-section">
+  <section class="legal-section" id="website-analytics">
     <h2>6. Website analytics and cookies</h2>
-    <p>At the date of this notice, Tynware does not intentionally deploy advertising pixels or behavioral advertising trackers on tynware.com. We do not sell personal data. Infrastructure providers may process technical request data and may use strictly necessary technologies for security, routing, abuse prevention or service operation. If Tynware later introduces non-essential analytics or marketing technologies, this notice and any consent mechanism will be updated before they are enabled where consent is required.</p>
+    <p>We use optional Google Analytics 4 to understand visits to tynware.com and interest in our software. On this website, the Google Analytics tag loads only after you select <strong>Accept analytics</strong>. Selecting <strong>Reject analytics</strong> leaves optional analytics off. Both choices let you use the site and download or buy products. You can reopen <strong>Privacy choices</strong> in the footer to change your decision.</p>
+    <p>With consent, Google Analytics processes page views, browser/device information and clicks on product links, installer-download links, sample resources and checkout links. A download click does not confirm an installation, and a checkout click does not confirm a purchase. We do not send customer records from the desktop software, license keys, payment details, arbitrary URL query strings or URL fragments as website event parameters. Google may process connection metadata when receiving these requests. Google Signals and advertising personalization are disabled for the website integration; we do not use advertising pixels or sell personal data.</p>
+    <p>Your choice is stored in your browser's local storage as <code>tynware.analytics-consent.v1</code> for up to 180 days. This preference does not contain a visitor identifier and is used to remember your decision. If you accept analytics, Google Analytics can set first-party <code>_ga</code> and <code>_ga_*</code> cookies with a maximum lifetime of 180 days. If you withdraw consent, we stop website collection, remove these cookies where accessible and reload the page to unload the analytics library. Withdrawal does not automatically erase data already collected; contact us to exercise your data rights.</p>
+    <p>Checkout pages hosted by Lemon Squeezy have their own privacy and cookie controls. Where its Google Analytics integration is enabled, successful-payment events can include transaction ID, purchased product, currency and order totals. The Merchant of Record's order records remain the reference for paid orders, refunds and revenue. Blocking analytics or declining consent can make analytics reports incomplete.</p>
+    <p>Infrastructure providers may also process technical request data and use strictly necessary technologies for security, routing, abuse prevention and service operation.</p>
   </section>
 
   <section class="legal-section">
@@ -107,6 +115,7 @@
     <p>We use a limited number of providers where needed to operate Tynware:</p>
     <ul class="legal-list">
       <li><strong>Cloudflare</strong> for website hosting, delivery, DNS and security. Cloudflare may process connection and traffic metadata needed to provide those services.</li>
+      <li><strong>Google Analytics</strong> for optional website measurement after consent, and checkout measurement where enabled by Lemon Squeezy. See <a href="https://policies.google.com/privacy" rel="external noopener">Google's Privacy Policy</a> and <a href="https://policies.google.com/technologies/partner-sites" rel="external noopener">how Google uses information from sites that use its services</a>.</li>
       <li><strong>Lemon Squeezy</strong>, when checkout/licensing is enabled, as Merchant of Record and/or licensing provider. Lemon Squeezy handles payment processing, applicable transaction taxes, refunds/chargebacks and associated checkout data under its own <a href="https://www.lemonsqueezy.com/buyer-terms" rel="external noopener">Buyer Terms</a> and <a href="https://www.lemonsqueezy.com/privacy" rel="external noopener">Privacy Policy</a>.</li>
       <li><strong>Email hosting/routing providers</strong> for receiving and sending support correspondence.</li>
       <li>Professional advisers, authorities or courts where disclosure is required by law or reasonably necessary to establish, exercise or defend legal claims.</li>
