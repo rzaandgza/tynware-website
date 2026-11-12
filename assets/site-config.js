@@ -24,13 +24,18 @@ window.TYNWARE_CONFIG = {
   products: {
     tynrent: {
       name: "TynRent",
-      version: "0.11.1",
+      version: "1.0.0",
       category: "Rental management",
       supportSummary: "Installation, trial/licensing, backups, diagnostics and recovery.",
       privacySummary: "Inventory, customers, reservations, returns, issues, reports and related operational records are stored locally on the user's PC. TynRent does not upload the operational database to Tynware during normal use.",
       termsSummary: "Windows 11 x64 rental-management software. Current lifetime license: up to two active devices. Core operational data is local-first. License activation and periodic validation require internet access.",
       productUrl: "/tynrent/",
       supportUrl: "/tynrent/support",
+      // Set downloadUrl to a publicly accessible R2 custom-domain URL ONLY
+      // after signed-file hash/download QA and commercial release approval.
+      // Set checkoutUrl to the Share > Hosted checkout /checkout/buy/ URL
+      // for Live Variant 2301780, never a customer-specific ?cart= URL.
+      // Keep both empty until the final signed candidate has passed GA gates.
       downloadUrl: "",
       checkoutUrl: "",
       platform: "Windows 11 · x64 (64-bit)",
