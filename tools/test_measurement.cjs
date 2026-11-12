@@ -60,10 +60,15 @@ test('no Google request, cookie or queued event before consent or after rejectio
 test('acceptance starts once; page data excludes query, hash and referrer paths', () => {
   const s=setup(); s.choose('granted'); s.choose('granted');
   assert.equal(s.scripts.length,1);
-  assert.deepEqual(s.events().map(e=>e[1]),['view_item']);
+  assert.deepEqual(s.events().map(e=>e[1]),['page_view','view_item']);
   const configs=s.commands().filter(c=>c[0]==='config');
   assert.equal(configs.length,1);
-  assert.equal(configs[0][2].send_page_view,true);
+  assert.equal(configs[0][2].send_page_view,false);
+  const commands=s.commands();
+  const globalSettings=commands.find(c=>c[0]==='set' && typeof c[1]==='object');
+  assert.equal(globalSettings[1].send_page_view,false);
+  assert.equal(globalSettings[1].page_location,'https://tynware.com/tynrent/');
+  assert.ok(commands.indexOf(globalSettings)<commands.findIndex(c=>c[0]==='js'));
   assert.equal(configs[0][2].page_location,'https://tynware.com/tynrent/');
   const data = JSON.stringify(s.commands());
   assert.ok(!/private|secret|license_key|email=/.test(data));
@@ -84,7 +89,7 @@ test('correct products; disabled links excluded; sample and installer downloads 
   s.click({},'https://tynware.com/assets/examples/tynrent-event-rental-sample.pdf');
   s.click({},'https://tynware.com/resources/tynrent/equipment-rental-spreadsheet-template/Tynware_Equipment_Rental_Spreadsheet_Template.xlsx');
   s.click({},'https://tynware.com/offerdesk/');
-  assert.deepEqual(s.events().slice(1).map(e=>[e[1],e[2].product_id]),[
+  assert.deepEqual(s.events().slice(2).map(e=>[e[1],e[2].product_id]),[
     ['download_click','tynrent'],['download_click','offerdesk'],['checkout_click','offerdesk'],['resource_download','tynrent'],['resource_download','tynrent'],['product_click','offerdesk']
   ]);
   assert.ok(!/token|private|secret|purchase/.test(JSON.stringify(s.events())));
