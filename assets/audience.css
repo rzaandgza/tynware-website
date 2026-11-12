@@ -1,1 +1,49 @@
-.audience-page{padding:1.5rem 0 4rem}.audience-intro{padding:2.5rem 0;border-bottom:1px solid var(--line)}.audience-intro h1{max-width:25ch;font-size:clamp(2.15rem,4.6vw,3.7rem);line-height:1.08}.audience-body{max-width:850px}.audience-section{padding:2.5rem 0;border-bottom:1px solid var(--line)}.audience-section h2{font-size:clamp(1.65rem,3vw,2.3rem);margin:1.8rem 0 1rem}.audience-section h2:first-child{margin-top:0}.audience-section p,.audience-section li{color:var(--muted);line-height:1.8}.audience-section a:not(.btn){text-underline-offset:.2em}.audience-section ul{display:grid;gap:.6rem;padding-left:1.4rem}.audience-image{display:block;margin:1.8rem 0 0;text-decoration:none}.audience-image img{display:block;width:100%;height:auto;border:1px solid var(--line);border-radius:12px}.audience-image span{display:block;margin-top:.6rem;color:var(--muted);font-size:.9rem}.audience-body .download-card{margin:1.8rem 0 0}.audience-body td,.audience-body th{font-size:.95rem}.audience-body .table-wrap{max-width:100%}
+.audience-page{
+  padding:1.5rem 0 4rem}
+.audience-intro{
+  padding:2.5rem 0;
+  border-bottom:1px solid var(--line)}
+.audience-intro h1{
+  max-width:25ch;
+  font-size:clamp(2.15rem,4.6vw,3.7rem);
+  line-height:1.08}
+.audience-body{
+  max-width:850px}
+.audience-section{
+  padding:2.5rem 0;
+  border-bottom:1px solid var(--line)}
+.audience-section h2{
+  font-size:clamp(1.65rem,3vw,2.3rem);
+  margin:1.8rem 0 1rem}
+.audience-section h2:first-child{
+  margin-top:0}
+.audience-section p,.audience-section li{
+  color:var(--muted);
+  line-height:1.8}
+.audience-section a:not(.btn){
+  text-underline-offset:.2em}
+.audience-section ul{
+  display:grid;
+  gap:.6rem;
+  padding-left:1.4rem}
+.audience-image{
+  display:block;
+  margin:1.8rem 0 0;
+  text-decoration:none}
+.audience-image img{
+  display:block;
+  width:100%;
+  height:auto;
+  border:1px solid var(--line);
+  border-radius:12px}
+.audience-image span{
+  display:block;
+  margin-top:.6rem;
+  color:var(--muted);
+  font-size:.9rem}
+.audience-body .download-card{
+  margin:1.8rem 0 0}
+.audience-body td,.audience-body th{
+  font-size:.95rem}
+.audience-body .table-wrap{
+  max-width:100%}
