@@ -54,12 +54,19 @@
       ad_user_data: "denied", ad_personalization: "denied"
     });
     window.gtag("consent", "update", {analytics_storage: "granted"});
+    // Apply to every config created by the Google tag, including linked destinations.
+    window.gtag("set", {
+      send_page_view: false,
+      page_location: pageUrl(),
+      page_referrer: referrerOrigin(),
+      allow_google_signals: false,
+      allow_ad_personalization_signals: false
+    });
     window.gtag("js", new Date());
     const domains = (config.checkoutDomains || []).filter((host) => /^[a-z0-9-]+\.lemonsqueezy\.com$/.test(host));
     if (domains.length) window.gtag("set", "linker", {domains, accept_incoming: false});
     window.gtag("config", id, {
-      // Let the Google tag own the initial page view. Do not also emit it manually.
-      send_page_view: true,
+      send_page_view: false,
       allow_google_signals: false,
       allow_ad_personalization_signals: false,
       cookie_expires: lifetime / 1000,
@@ -73,6 +80,7 @@
     tag.async = true;
     tag.src = `https://www.googletagmanager.com/gtag/js?id=${id}`;
     document.head.append(tag);
+    emit("page_view", {page_location: pageUrl(), page_referrer: referrerOrigin(), page_title: document.title});
     const product = productFor(location.pathname);
     if (product && ["/tynrent/", "/offerdesk/"].includes(location.pathname)) {
       emit("view_item", {items: [{item_id: product, item_name: product === "tynrent" ? "TynRent" : "Offer Desk"}]});
