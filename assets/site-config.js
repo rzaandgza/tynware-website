@@ -31,13 +31,12 @@ window.TYNWARE_CONFIG = {
       termsSummary: "Windows 11 x64 rental-management software. Current lifetime license: up to two active devices. Core operational data is local-first. License activation and periodic validation require internet access.",
       productUrl: "/tynrent/",
       supportUrl: "/tynrent/support",
-      // Set downloadUrl to a publicly accessible R2 custom-domain URL ONLY
-      // after signed-file hash/download QA and commercial release approval.
-      // Set checkoutUrl to the Share > Hosted checkout /checkout/buy/ URL
-      // for Live Variant 2301780, never a customer-specific ?cart= URL.
-      // Keep both empty until the final signed candidate has passed GA gates.
+      // Checkout mapping is owner-approved. Public downloads require the final
+      // signed-byte QA, separate legal approval and owner distribution GO.
       downloadUrl: "",
-      checkoutUrl: "",
+      downloadApproved: false,
+      checkoutUrl: "https://tynware.lemonsqueezy.com/checkout/buy/d7242365-b524-43a5-a0d8-208abb348a5b",
+      priceEUR: 57,
       platform: "Windows 11 · x64 (64-bit)",
       installScope: "Machine-wide installation; Windows administrator approval is required.",
       installPath: "%ProgramFiles%\\Tynware\\TynRent",
@@ -103,15 +102,17 @@ window.TYNWARE_CONFIG = {
     },
     offerdesk: {
       name: "Offer Desk",
-      version: "0.9.1",
+      version: "1.0.0",
       category: "Job pricing & quoting",
       supportSummary: "Installation, language setup, PDF troubleshooting, backups and local data.",
       privacySummary: "Customers, quotes, reusable library items, company settings and internal pricing data are stored locally on the user's PC. Offer Desk does not require a Tynware cloud workspace for its core workflow.",
-      termsSummary: "Windows 11 x64 job-pricing and quoting software. The commercial product is planned as a one-time license. Release-specific activation details shown on the product page and checkout at purchase form part of the license terms.",
+      termsSummary: "Windows 11 x64 job-pricing and quoting software. Perpetual license for the purchased version, with up to two active devices. A free 14-day full-featured trial requires no account, card or license key. After expiry, viewing, backup and export remain available. Activate the purchased key inside the same installation.",
       productUrl: "/offerdesk/",
       supportUrl: "/offerdesk/support",
       downloadUrl: "",
-      checkoutUrl: "",
+      downloadApproved: false,
+      checkoutUrl: "https://tynware.lemonsqueezy.com/checkout/buy/ce31c7b5-5441-444c-aa6c-4547dd0c6dfd",
+      priceEUR: 113,
       platform: "Windows 11 · x64 (64-bit)",
       installScope: "Per-user installation; administrator rights are normally not required.",
       installPath: "%LOCALAPPDATA%\\Programs\\Tynware\\OfferDesk",
