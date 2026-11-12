@@ -45,9 +45,9 @@ function wireLink(selector, url, fallbackLabel, keepVisible = false) {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  wireLink("[data-checkout]", window.TYNWARE_SITE.tynRentCheckoutUrl, "Checkout coming soon");
+  wireLink("[data-checkout]", window.TYNWARE_SITE.tynRentCheckoutUrl, "Buy License");
   wireLink("[data-download]", window.TYNWARE_SITE.tynRentDownloadUrl, "Download Free 14-Day Trial", true);
-  wireLink("[data-offerdesk-checkout]", window.TYNWARE_SITE.offerDeskCheckoutUrl, "Checkout coming soon");
+  wireLink("[data-offerdesk-checkout]", window.TYNWARE_SITE.offerDeskCheckoutUrl, "Buy License");
   wireLink("[data-offerdesk-download]", window.TYNWARE_SITE.offerDeskDownloadUrl, "Download Free 14-Day Trial", true);
 
   document.querySelectorAll("[data-release-actions]").forEach((group) => {
@@ -60,7 +60,7 @@ document.addEventListener("DOMContentLoaded", () => {
   document.querySelectorAll("[data-release-status]").forEach((el) => {
     const product = tynwareProducts[el.dataset.releaseStatus] || {};
     if (checkoutFor(el.dataset.releaseStatus)) {
-      el.textContent = "€" + product.priceEUR + " one-time, before applicable tax. The final total is shown at checkout." + (downloadFor(el.dataset.releaseStatus) ? "" : " Free trial download is being prepared.");
+      el.textContent = "Version " + product.version + " · €" + product.priceEUR + " one-time, before applicable tax. The final total is shown at checkout.";
     }
   });
 

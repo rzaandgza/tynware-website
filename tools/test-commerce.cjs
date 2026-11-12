@@ -20,18 +20,19 @@ for (const product of Object.keys(urls)) {
   check(productConfig.version, '1.0.0');
   check(productConfig.checkoutUrl, urls[product]);
   check(vm.runInContext(`checkoutFor('${product}')`, context), urls[product]);
-  check(vm.runInContext(`downloadFor('${product}')`, context), '');
-  check(productConfig.downloadApproved, false);
-  check(productConfig.downloadUrl, '');
+  const filename = product === 'tynrent' ? 'TynRent_Setup_1.0.0.exe' : 'OfferDesk-1.0.0-Setup.exe';
+  const download = `https://downloads.tynware.com/${product}/1.0.0/${filename}`;
+  check(vm.runInContext(`downloadFor('${product}')`, context), download);
+  check(productConfig.downloadApproved, true);
+  check(productConfig.downloadUrl, download);
   const other = product === 'tynrent' ? 'offerdesk' : 'tynrent';
   for (const invalid of [urls[other], urls[product] + '?cart=private', urls[product] + '#fragment', 'https://evil.example/']) {
     productConfig.checkoutUrl = invalid;
     check(vm.runInContext(`checkoutFor('${product}')`, context), '');
   }
   productConfig.checkoutUrl = urls[product];
-  const filename = product === 'tynrent' ? 'TynRent_Setup_1.0.0.exe' : 'OfferDesk-1.0.0-Setup.exe';
-  const download = `https://downloads.tynware.com/${product}/1.0.0/${filename}`;
   productConfig.downloadUrl = download;
+  productConfig.downloadApproved = false;
   check(vm.runInContext(`downloadFor('${product}')`, context), '');
   productConfig.downloadApproved = true;
   check(vm.runInContext(`downloadFor('${product}')`, context), download);
@@ -44,6 +45,10 @@ for (const product of Object.keys(urls)) {
   const html = fs.readFileSync(path.join(root, product, 'index.html'), 'utf8');
   check((html.match(/>Download Free 14-Day Trial<\/a>/g) || []).length, 2);
   check((html.match(/>Buy License<\/a>/g) || []).length, 2);
+  check(html.includes(`href="${download}" download="${filename}"`), true);
+  check(html.includes('id="installation"'), true);
+  check(html.includes('TYNWARE SOFT S.R.L.'), true);
+  check(/coming soon|being prepared|await final|release enquiry/i.test(html), false);
   for (const text of ['payment card', '14 days of full access', 'backup', 'export', 'same installed application', 'No reinstall', 'Lemon Squeezy']) {
     assert.ok(html.includes(text), `${product}: missing ${text}`); checks++;
   }
