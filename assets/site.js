@@ -11,6 +11,7 @@ window.TYNWARE_SITE = {
 
 function wireLink(selector, url, fallbackLabel) {
   document.querySelectorAll(selector).forEach((el) => {
+    el.hidden = !url;
     if (url) {
       el.href = url;
       el.classList.remove("disabled");
@@ -29,6 +30,20 @@ document.addEventListener("DOMContentLoaded", () => {
   wireLink("[data-download]", window.TYNWARE_SITE.tynRentDownloadUrl, "Download coming soon");
   wireLink("[data-offerdesk-checkout]", window.TYNWARE_SITE.offerDeskCheckoutUrl, "Checkout coming soon");
   wireLink("[data-offerdesk-download]", window.TYNWARE_SITE.offerDeskDownloadUrl, "Download coming soon");
+
+  document.querySelectorAll("[data-release-actions]").forEach((group) => {
+    group.hidden = ![...group.querySelectorAll("a")].some((link) => !link.hidden);
+  });
+  document.querySelectorAll("[data-prelaunch-actions]").forEach((group) => {
+    const product = tynwareProducts[group.dataset.prelaunchActions] || {};
+    group.hidden = Boolean(product.downloadUrl || product.checkoutUrl);
+  });
+  document.querySelectorAll("[data-release-status]").forEach((el) => {
+    const product = tynwareProducts[el.dataset.releaseStatus] || {};
+    if (product.downloadUrl || product.checkoutUrl) {
+      el.textContent = "€" + (el.dataset.releaseStatus === "tynrent" ? "57" : "113") + " one-time, before applicable tax. The final total is shown at checkout.";
+    }
+  });
 
   document.querySelectorAll("[data-support-email]").forEach((el) => {
     el.textContent = window.TYNWARE_SITE.supportEmail;
@@ -163,7 +178,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   if (productName && productIcon) {
-    const hero = document.querySelector("main .hero");
+    const hero = document.querySelector(".product-hero-copy") || document.querySelector("main .hero");
     if (hero && !hero.querySelector(".hero-product-identity")) {
       const identity = document.createElement("div");
       identity.className = "hero-product-identity";

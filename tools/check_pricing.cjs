@@ -1,0 +1,14 @@
+const assert = require('node:assert/strict');
+const { calculateQuote } = require('../assets/margin-calculator.js');
+const near = (a, b) => assert.ok(Math.abs(a - b) < 1e-8, `${a} != ${b}`);
+let result = calculateQuote(100, 30);
+near(result.sellingPrice, 142.85714285714286);
+near(result.profit, 42.85714285714286);
+near(result.markup, 42.85714285714286);
+result = calculateQuote(400, 25);
+near(result.sellingPrice, 533.3333333333334);
+near((result.profit / result.sellingPrice) * 100, 25);
+assert.deepEqual(calculateQuote(100, 0), { sellingPrice:100, profit:0, markup:0 });
+assert.deepEqual(calculateQuote(0, 30), { sellingPrice:0, profit:0, markup:null });
+for (const pair of [[-1,30],[100,100],[100,-1],[NaN,30],[100,Infinity]]) assert.equal(calculateQuote(...pair), null);
+console.log('Pricing checks passed: margin/markup conversion, zero cost and invalid inputs.');
