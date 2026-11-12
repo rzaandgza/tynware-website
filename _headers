@@ -32,3 +32,9 @@
 
 /assets/measurement.css
   Cache-Control: no-cache
+
+/assets/product-performance.css
+  Cache-Control: no-cache
+
+/assets/previews/*
+  Cache-Control: public, max-age=604800
