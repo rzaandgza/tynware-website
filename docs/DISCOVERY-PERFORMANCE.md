@@ -4,7 +4,9 @@
 
 The existing domain property is `sc-domain:tynware.com`. Resubmitting `https://tynware.com/sitemap.xml` succeeded; Search Console now reports **19 discovered pages**, last read 13 November 2026 (previously 15). Discovery is not confirmation of indexing.
 
-Inspected the four newly published audience/first-step pages. They initially reported **URL is unknown to Google**. Requested indexing individually; record final acknowledgements below. This queues crawling and does not guarantee indexing or rankings.
+Inspected the four newly published audience/first-step pages. The two audience pages and TynRent first-step guide initially reported **URL is unknown to Google**; the Offer Desk first-step guide reported **Discovered - currently not indexed**, associated with the sitemap. All four individual indexing requests were acknowledged as **Indexing requested** on 13 November 2026. This queues crawling and does not guarantee indexing or rankings.
+
+The earlier `http://www.tynware.com/` 5xx issue still shows **Validation started**, started 12 November 2026; its coverage report is last updated 9 November, with the historical crawl on 6 November. Google has not completed validation. No new validation was started.
 
 ## Internal links
 
@@ -53,3 +55,13 @@ Reference: [Cloudflare Browser Cache TTL](https://developers.cloudflare.com/cach
 - Visually inspected compressed TynRent preview: interface and text remain legible. Original PNG zoom is retained for detail.
 
 Do not enable installers, checkout URLs or purchase analytics as part of this change. Commercial release configuration remains with the release workstream.
+
+## Preview follow-up
+
+[TynRent mobile preview](https://pagespeed.web.dev/analysis/https-691c3f41-tynware-website-pages-dev-tynrent/hi3ltn841h?form_factor=mobile): **100 performance**, FCP 0.9 s, LCP **1.4 s**, TBT 0 ms, CLS **0**, Speed Index 2.3 s. Accessibility and Best Practices remain 100. The preview SEO score is lower because Cloudflare intentionally sends `X-Robots-Tag: noindex` on preview deployments; never remove this protection to increase a preview score.
+
+These are separate single lab runs on production and a Cloudflare preview hostname. Preview hosts do not enable the production analytics integration. Reconfirm on tynware.com after publication; do not interpret the difference as a guaranteed field-data improvement.
+
+[Offer Desk mobile preview](https://pagespeed.web.dev/analysis/https-691c3f41-tynware-website-pages-dev-offerdesk/b82e17u6v9?form_factor=mobile): **100 performance**, FCP/LCP 0.9 s, TBT 0 ms, CLS 0.009, Speed Index 0.9 s. Same preview-host and single-run limitations apply.
+
+The historical 5xx URL was also checked directly on 13 November: `http://www.tynware.com/` → one redirect → `https://tynware.com/`, HTTP 200. This live check does not imply Google has completed validation.
