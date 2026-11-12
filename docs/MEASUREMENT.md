@@ -27,7 +27,7 @@ Arbitrary URL queries/fragments, full checkout URLs, link text, email, license k
 Configured account: `416184123`; property: `564147252`; web stream: `16331506796`; measurement ID: `G-7DR0GGKFJV`. Created 13 November 2026. The owner accepted the Google terms in the browser. Account and property creation alone do not mean the website is collecting data; the integration must be deployed and verified.
 
 1. Create/select the Tynware account and property; reporting timezone Romania and currency EUR.
-2. Create the HTTPS `tynware.com` Web stream. **Disable Enhanced measurement**; this site sends explicit page views and download events. Automatic outbound/file/form/history events could duplicate counts or collect unreviewed URLs.
+2. Create the HTTPS `tynware.com` Web stream. **Disable Enhanced measurement**; one `config` command lets the Google tag send the initial page view, with sanitized URL/referrer parameters. The website does not also emit a manual `page_view`. Automatic outbound/file/form/history events could duplicate counts or collect unreviewed URLs.
 3. Keep optional account data sharing and Google Signals off. Do not install a second Google tag or GTM container snippet on the site.
 4. Add event-scoped custom dimensions `product_id` and `resource_name`.
 5. Mark `download_click` as a key event for trial interest, counted once per session with **no default monetary value**. Event counts still show repeat clicks. `purchase` is the sales key event. Keep `checkout_click` separate; never treat it as a completed sale.
