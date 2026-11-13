@@ -60,7 +60,11 @@ for url in urls:
     if target not in pages or pages[target].canonicals!=[url]:errors.append(f'sitemap: noncanonical or missing URL {url}')
 if len(urls)!=len(set(urls)):errors.append('sitemap: duplicate URLs')
 config=(ROOT/'assets/site-config.js').read_text(encoding='utf-8')
-if not re.search(r'downloadUrl:\s*""',config) or not re.search(r'checkoutUrl:\s*""',config):errors.append('Prelaunch URL state changed unexpectedly')
+for product,filename in [('tynrent','TynRent_Setup_1.0.0.exe'),('offerdesk','OfferDesk-1.0.0-Setup.exe')]:
+    if f'https://downloads.tynware.com/{product}/1.0.0/{filename}' not in config:errors.append(f'{product}: missing approved versioned download')
+if len(re.findall(r'downloadApproved:\s*true',config))!=2:errors.append('Both product downloads must have explicit owner approval')
+for file in pages:
+    if re.search(r'coming soon|checkout remains disabled|download is being prepared|public downloads await',file.read_text(encoding='utf-8'),re.I):errors.append(f'{file.relative_to(ROOT)}: stale prelaunch copy')
 for error in errors:print('ERROR:',error)
 print(f'Checked {len(pages)} HTML pages and {len(urls)} sitemap entries; {len(errors)} errors.')
 sys.exit(bool(errors))

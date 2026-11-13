@@ -13,7 +13,7 @@ window.TYNWARE_CONFIG = {
     phone: "",
     primaryActivity: "CAEN 5829 — Activități de editare a altor produse software",
     country: "Romania",
-    effectiveDate: "24 October 2026"
+    effectiveDate: "13 November 2026"
   },
   commerce: {
     merchantOfRecord: "Lemon Squeezy",
@@ -24,15 +24,18 @@ window.TYNWARE_CONFIG = {
   products: {
     tynrent: {
       name: "TynRent",
-      version: "0.11.1",
+      version: "1.0.0",
       category: "Rental management",
       supportSummary: "Installation, trial/licensing, backups, diagnostics and recovery.",
       privacySummary: "Inventory, customers, reservations, returns, issues, reports and related operational records are stored locally on the user's PC. TynRent does not upload the operational database to Tynware during normal use.",
-      termsSummary: "Windows 11 x64 rental-management software. Current lifetime license: up to two active devices. Core operational data is local-first. License activation and periodic validation require internet access.",
+      termsSummary: "Windows 11 x64 rental-management software. Perpetual license for the purchased version, with up to two active devices. Core operational data is local-first. License activation and periodic validation require internet access.",
       productUrl: "/tynrent/",
       supportUrl: "/tynrent/support",
-      downloadUrl: "",
-      checkoutUrl: "",
+      // Exact signed release files selected for the owner-authorized 13 November 2026 launch.
+      downloadUrl: "https://downloads.tynware.com/tynrent/1.0.0/TynRent_Setup_1.0.0.exe",
+      downloadApproved: true,
+      checkoutUrl: "https://tynware.lemonsqueezy.com/checkout/buy/d7242365-b524-43a5-a0d8-208abb348a5b",
+      priceEUR: 57,
       platform: "Windows 11 · x64 (64-bit)",
       installScope: "Machine-wide installation; Windows administrator approval is required.",
       installPath: "%ProgramFiles%\\Tynware\\TynRent",
@@ -60,7 +63,7 @@ window.TYNWARE_CONFIG = {
       ],
       installation: [
         "Download TynRent only from the official Tynware product page.",
-        "For the public release, right-click the installer → Properties → Digital Signatures and verify a valid signature from the Tynware legal publisher shown on the Company page.",
+        "Right-click the installer → Properties → Digital Signatures and verify the publisher TYNWARE SOFT S.R.L.",
         "Open the installer. Windows will request administrator approval because TynRent installs under Program Files.",
         "Choose whether you want the optional desktop shortcut, then complete installation.",
         "Launch TynRent from the Start menu or shortcut. The 14-day trial begins on first run."
@@ -76,7 +79,7 @@ window.TYNWARE_CONFIG = {
         },
         {
           title: "Activation or validation fails",
-          text: "Confirm that the PC has internet access and retry from Help → License. Do not delete licensing files and do not email your full license key unless support explicitly asks for a secure diagnostic step."
+          text: "Confirm that the PC has internet access and retry using Help → Activate License. Do not delete licensing files and do not email your full license key unless support explicitly asks for a secure diagnostic step."
         },
         {
           title: "Data looks missing after reinstall",
@@ -98,15 +101,17 @@ window.TYNWARE_CONFIG = {
     },
     offerdesk: {
       name: "Offer Desk",
-      version: "0.9.1",
+      version: "1.0.0",
       category: "Job pricing & quoting",
       supportSummary: "Installation, language setup, PDF troubleshooting, backups and local data.",
       privacySummary: "Customers, quotes, reusable library items, company settings and internal pricing data are stored locally on the user's PC. Offer Desk does not require a Tynware cloud workspace for its core workflow.",
-      termsSummary: "Windows 11 x64 job-pricing and quoting software. The commercial product is planned as a one-time license. Release-specific activation details shown on the product page and checkout at purchase form part of the license terms.",
+      termsSummary: "Windows 11 x64 job-pricing and quoting software. Perpetual license for the purchased version, with up to two active devices. A free 14-day full-featured trial requires no account, card or license key. After expiry, viewing, backup and export remain available. Activate the purchased key inside the same installation.",
       productUrl: "/offerdesk/",
       supportUrl: "/offerdesk/support",
-      downloadUrl: "",
-      checkoutUrl: "",
+      downloadUrl: "https://downloads.tynware.com/offerdesk/1.0.0/OfferDesk-1.0.0-Setup.exe",
+      downloadApproved: true,
+      checkoutUrl: "https://tynware.lemonsqueezy.com/checkout/buy/ce31c7b5-5441-444c-aa6c-4547dd0c6dfd",
+      priceEUR: 113,
       platform: "Windows 11 · x64 (64-bit)",
       installScope: "Per-user installation; administrator rights are normally not required.",
       installPath: "%LOCALAPPDATA%\\Programs\\Tynware\\OfferDesk",
@@ -134,7 +139,7 @@ window.TYNWARE_CONFIG = {
       ],
       installation: [
         "Download Offer Desk only from the official Tynware product page.",
-        "For the public release, right-click the installer → Properties → Digital Signatures and verify a valid signature from the Tynware legal publisher shown on the Company page.",
+        "Right-click the installer → Properties → Digital Signatures and verify the publisher TYNWARE SOFT S.R.L.",
         "Open the installer and choose your preferred installer/interface language in the first dialog.",
         "Complete the per-user installation. Offer Desk creates Start-menu and desktop shortcuts.",
         "Launch Offer Desk and review your company profile, currency, tax and document defaults before creating customer quotes."
@@ -158,7 +163,7 @@ window.TYNWARE_CONFIG = {
         },
         {
           title: "A legacy Monto data warning appears",
-          text: "Pre-release users may have a legacy Monto data folder. If Offer Desk reports that both the legacy and new folders contain data, stop and contact support. Do not merge or delete either folder manually."
+          text: "Users of earlier Offer Desk versions may have a legacy Monto data folder. If Offer Desk reports that both the legacy and new folders contain data, stop and contact support. Do not merge or delete either folder manually."
         },
         {
           title: "Data remains after uninstall",

@@ -1,47 +1,66 @@
 const tynwareConfig = window.TYNWARE_CONFIG || {};
 const tynwareProducts = tynwareConfig.products || {};
 
+// Product checkout identities must never be interchanged. Downloads fail closed
+// until an exact signed release has separate public-distribution approval.
+const approvedCheckouts = {
+  tynrent: "https://tynware.lemonsqueezy.com/checkout/buy/d7242365-b524-43a5-a0d8-208abb348a5b",
+  offerdesk: "https://tynware.lemonsqueezy.com/checkout/buy/ce31c7b5-5441-444c-aa6c-4547dd0c6dfd"
+};
+function checkoutFor(product) {
+  const url = tynwareProducts[product]?.checkoutUrl;
+  return url === approvedCheckouts[product] ? url : "";
+}
+function downloadFor(product) {
+  const config = tynwareProducts[product] || {};
+  if (config.downloadApproved !== true || !config.downloadUrl) return "";
+  const filename = product === "tynrent" ? "TynRent_Setup_1.0.0.exe" : "OfferDesk-1.0.0-Setup.exe";
+  const expected = `https://downloads.tynware.com/${product}/1.0.0/${filename}`;
+  return config.downloadUrl === expected ? expected : "";
+}
+
 window.TYNWARE_SITE = {
-  tynRentCheckoutUrl: tynwareProducts.tynrent?.checkoutUrl || "",
-  tynRentDownloadUrl: tynwareProducts.tynrent?.downloadUrl || "",
-  offerDeskCheckoutUrl: tynwareProducts.offerdesk?.checkoutUrl || "",
-  offerDeskDownloadUrl: tynwareProducts.offerdesk?.downloadUrl || "",
+  tynRentCheckoutUrl: checkoutFor("tynrent"),
+  tynRentDownloadUrl: downloadFor("tynrent"),
+  offerDeskCheckoutUrl: checkoutFor("offerdesk"),
+  offerDeskDownloadUrl: downloadFor("offerdesk"),
   supportEmail: tynwareConfig.supportEmail || "support@tynware.com"
 };
 
-function wireLink(selector, url, fallbackLabel) {
+function wireLink(selector, url, fallbackLabel, keepVisible = false) {
   document.querySelectorAll(selector).forEach((el) => {
-    el.hidden = !url;
+    el.hidden = !url && !keepVisible;
     if (url) {
       el.href = url;
       el.classList.remove("disabled");
       el.removeAttribute("aria-disabled");
     } else {
-      el.href = "#";
+      el.removeAttribute("href");
+      el.addEventListener("click", (event) => event.preventDefault());
       el.classList.add("disabled");
       el.setAttribute("aria-disabled", "true");
-      if (fallbackLabel) el.textContent = fallbackLabel;
+      if (fallbackLabel && !keepVisible) el.textContent = fallbackLabel;
     }
   });
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  wireLink("[data-checkout]", window.TYNWARE_SITE.tynRentCheckoutUrl, "Checkout coming soon");
-  wireLink("[data-download]", window.TYNWARE_SITE.tynRentDownloadUrl, "Download coming soon");
-  wireLink("[data-offerdesk-checkout]", window.TYNWARE_SITE.offerDeskCheckoutUrl, "Checkout coming soon");
-  wireLink("[data-offerdesk-download]", window.TYNWARE_SITE.offerDeskDownloadUrl, "Download coming soon");
+  wireLink("[data-checkout]", window.TYNWARE_SITE.tynRentCheckoutUrl, "Buy License");
+  wireLink("[data-download]", window.TYNWARE_SITE.tynRentDownloadUrl, "Download Free 14-Day Trial", true);
+  wireLink("[data-offerdesk-checkout]", window.TYNWARE_SITE.offerDeskCheckoutUrl, "Buy License");
+  wireLink("[data-offerdesk-download]", window.TYNWARE_SITE.offerDeskDownloadUrl, "Download Free 14-Day Trial", true);
 
   document.querySelectorAll("[data-release-actions]").forEach((group) => {
     group.hidden = ![...group.querySelectorAll("a")].some((link) => !link.hidden);
   });
   document.querySelectorAll("[data-prelaunch-actions]").forEach((group) => {
     const product = tynwareProducts[group.dataset.prelaunchActions] || {};
-    group.hidden = Boolean(product.downloadUrl || product.checkoutUrl);
+    group.hidden = Boolean(downloadFor(group.dataset.prelaunchActions) || checkoutFor(group.dataset.prelaunchActions));
   });
   document.querySelectorAll("[data-release-status]").forEach((el) => {
     const product = tynwareProducts[el.dataset.releaseStatus] || {};
-    if (product.downloadUrl || product.checkoutUrl) {
-      el.textContent = "€" + (el.dataset.releaseStatus === "tynrent" ? "57" : "113") + " one-time, before applicable tax. The final total is shown at checkout.";
+    if (checkoutFor(el.dataset.releaseStatus)) {
+      el.textContent = "Version " + product.version + " · €" + product.priceEUR + " one-time, before applicable tax. The final total is shown at checkout.";
     }
   });
 
