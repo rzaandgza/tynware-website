@@ -1,0 +1,30 @@
+{
+  "date_local": "2026-11-16",
+  "timezone": "Europe/Bucharest",
+  "branch": "migration/polar-20261116",
+  "base_main_commit": "c00001f3e58eacbaccf00ea42cb93bebfdbdf6ee",
+  "production_changed": false,
+  "merged": false,
+  "public_installer_uploaded": false,
+  "polar_real_sandbox_tested": false,
+  "production_license_activations": 0,
+  "remaining": [
+    "Independent Sandbox organization/benefits and issued test keys",
+    "Real Polar API device/deactivation/revocation/offline matrix",
+    "Polar live account approval, tax treatment, real portal slug",
+    "Fresh 1.0.1 install with no prior app/trial history",
+    "Manual Windows DPI/language matrix and buyer journey",
+    "Separate owner approval before merge/deploy/public upload/Production activation"
+  ],
+  "commerce_checks": 62,
+  "measurement_tests": 7,
+  "html_pages": 20,
+  "sitemap_entries": 19,
+  "site_errors": 0,
+  "checkout_prices_eur": {
+    "tynrent": 60,
+    "offerdesk": 120
+  },
+  "download_links": "Unchanged 1.0.0: this is a release blocker until approved 1.0.1 artifact mapping is committed",
+  "purchase_events_invented": false
+}

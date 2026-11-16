@@ -4,8 +4,8 @@ const tynwareProducts = tynwareConfig.products || {};
 // Product checkout identities must never be interchanged. Downloads fail closed
 // until an exact signed release has separate public-distribution approval.
 const approvedCheckouts = {
-  tynrent: "https://tynware.lemonsqueezy.com/checkout/buy/d7242365-b524-43a5-a0d8-208abb348a5b",
-  offerdesk: "https://tynware.lemonsqueezy.com/checkout/buy/ce31c7b5-5441-444c-aa6c-4547dd0c6dfd"
+  tynrent: "https://buy.polar.sh/polar_cl_MIJPlmv9sfax2QJJjd0qPHVnpRIGJtGQT9Zg436Ociy",
+  offerdesk: "https://buy.polar.sh/polar_cl_OaR29DQ4tfML1oaZoRxnavHwYQfgGi1pbuUco3IzS2V"
 };
 function checkoutFor(product) {
   const url = tynwareProducts[product]?.checkoutUrl;
@@ -14,8 +14,8 @@ function checkoutFor(product) {
 function downloadFor(product) {
   const config = tynwareProducts[product] || {};
   if (config.downloadApproved !== true || !config.downloadUrl) return "";
-  const filename = product === "tynrent" ? "TynRent_Setup_1.0.0.exe" : "OfferDesk-1.0.0-Setup.exe";
-  const expected = `https://downloads.tynware.com/${product}/1.0.0/${filename}`;
+  const filename = product === "tynrent" ? "TynRent_Setup_1.0.1.exe" : "OfferDesk-1.0.1-Setup.exe";
+  const expected = `https://downloads.tynware.com/${product}/1.0.1/${filename}`;
   return config.downloadUrl === expected ? expected : "";
 }
 

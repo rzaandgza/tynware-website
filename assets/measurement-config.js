@@ -2,6 +2,6 @@
 window.TYNWARE_MEASUREMENT = {
   measurementId: "G-7DR0GGKFJV",
   productionHosts: ["tynware.com", "www.tynware.com"],
-  // Add only the exact Lemon Squeezy store hostname after checkout is configured.
+  // No cross-domain decoration: hosted Polar analytics is not verified.
   checkoutDomains: []
 };
