@@ -63,8 +63,7 @@
       allow_ad_personalization_signals: false
     });
     window.gtag("js", new Date());
-    const domains = (config.checkoutDomains || []).filter((host) => /^[a-z0-9-]+\.lemonsqueezy\.com$/.test(host));
-    if (domains.length) window.gtag("set", "linker", {domains, accept_incoming: false});
+    // Hosted Polar checkout has independent analytics; no cross-domain linker.
     window.gtag("config", id, {
       send_page_view: false,
       allow_google_signals: false,

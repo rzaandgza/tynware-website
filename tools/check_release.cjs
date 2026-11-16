@@ -3,12 +3,12 @@ const fs = require('node:fs');
 const vm = require('node:vm');
 const source = fs.readFileSync(require.resolve('../assets/site.js'), 'utf8').split('// Screenshot lightbox')[0];
 const checkouts = {
-  tynrent:'https://tynware.lemonsqueezy.com/checkout/buy/d7242365-b524-43a5-a0d8-208abb348a5b',
-  offerdesk:'https://tynware.lemonsqueezy.com/checkout/buy/ce31c7b5-5441-444c-aa6c-4547dd0c6dfd'
+  tynrent:'https://buy.polar.sh/polar_cl_MIJPlmv9sfax2QJJjd0qPHVnpRIGJtGQT9Zg436Ociy',
+  offerdesk:'https://buy.polar.sh/polar_cl_OaR29DQ4tfML1oaZoRxnavHwYQfgGi1pbuUco3IzS2V'
 };
 const downloads = {
-  tynrent:'https://downloads.tynware.com/tynrent/1.0.0/TynRent_Setup_1.0.0.exe',
-  offerdesk:'https://downloads.tynware.com/offerdesk/1.0.0/OfferDesk-1.0.0-Setup.exe'
+  tynrent:'https://downloads.tynware.com/tynrent/1.0.1/TynRent_Setup_1.0.1.exe',
+  offerdesk:'https://downloads.tynware.com/offerdesk/1.0.1/OfferDesk-1.0.1-Setup.exe'
 };
 function run(products) {
   const callbacks=[];

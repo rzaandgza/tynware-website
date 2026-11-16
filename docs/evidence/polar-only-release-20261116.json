@@ -1,0 +1,21 @@
+{
+  "date_local": "2026-11-16",
+  "provider": "polar_only",
+  "publication_authorized_by": "Product Owner in chat",
+  "purchase_test": "Owner will perform; not agent-tested",
+  "polar_real_sandbox_tested": false,
+  "legacy_local_files_preserved": true,
+  "legacy_entitlement_accepted": false,
+  "automated_tests_passed": null,
+  "signatures": [],
+  "compiled_contract": null,
+  "installed_windows_sandbox": null,
+  "upgrade_rows": null,
+  "website_checks": {
+    "commerce": 62,
+    "measurement": 7,
+    "html_pages": 20,
+    "sitemap_entries": 19,
+    "errors": 0
+  }
+}

@@ -8,8 +8,8 @@ const config = fs.readFileSync(path.join(root, 'assets/site-config.js'), 'utf8')
 const script = fs.readFileSync(path.join(root, 'assets/site.js'), 'utf8');
 const bootstrap = script.slice(0, script.indexOf('document.addEventListener'));
 const urls = {
-  tynrent: 'https://tynware.lemonsqueezy.com/checkout/buy/d7242365-b524-43a5-a0d8-208abb348a5b',
-  offerdesk: 'https://tynware.lemonsqueezy.com/checkout/buy/ce31c7b5-5441-444c-aa6c-4547dd0c6dfd'
+  tynrent: 'https://buy.polar.sh/polar_cl_MIJPlmv9sfax2QJJjd0qPHVnpRIGJtGQT9Zg436Ociy',
+  offerdesk: 'https://buy.polar.sh/polar_cl_OaR29DQ4tfML1oaZoRxnavHwYQfgGi1pbuUco3IzS2V'
 };
 const context = vm.createContext({window: {}});
 vm.runInContext(config + '\n' + bootstrap, context);
@@ -17,11 +17,11 @@ let checks = 0;
 function check(value, expected) { assert.equal(value, expected); checks++; }
 for (const product of Object.keys(urls)) {
   const productConfig = context.window.TYNWARE_CONFIG.products[product];
-  check(productConfig.version, '1.0.0');
+  check(productConfig.version, '1.0.1');
   check(productConfig.checkoutUrl, urls[product]);
   check(vm.runInContext(`checkoutFor('${product}')`, context), urls[product]);
-  const filename = product === 'tynrent' ? 'TynRent_Setup_1.0.0.exe' : 'OfferDesk-1.0.0-Setup.exe';
-  const download = `https://downloads.tynware.com/${product}/1.0.0/${filename}`;
+  const filename = product === 'tynrent' ? 'TynRent_Setup_1.0.1.exe' : 'OfferDesk-1.0.1-Setup.exe';
+  const download = `https://downloads.tynware.com/${product}/1.0.1/${filename}`;
   check(vm.runInContext(`downloadFor('${product}')`, context), download);
   check(productConfig.downloadApproved, true);
   check(productConfig.downloadUrl, download);
@@ -49,10 +49,10 @@ for (const product of Object.keys(urls)) {
   check(html.includes('id="installation"'), true);
   check(html.includes('TYNWARE SOFT S.R.L.'), true);
   check(/coming soon|being prepared|await final|release enquiry/i.test(html), false);
-  for (const text of ['payment card', '14 days of full access', 'backup', 'export', 'same installed application', 'No reinstall', 'Lemon Squeezy']) {
+  for (const text of ['payment card', '14 days of full access', 'backup', 'export', 'same installed application', 'No reinstall', 'Polar']) {
     assert.ok(html.includes(text), `${product}: missing ${text}`); checks++;
   }
 }
-check(context.window.TYNWARE_CONFIG.products.tynrent.priceEUR, 57);
-check(context.window.TYNWARE_CONFIG.products.offerdesk.priceEUR, 113);
+check(context.window.TYNWARE_CONFIG.products.tynrent.priceEUR, 60);
+check(context.window.TYNWARE_CONFIG.products.offerdesk.priceEUR, 120);
 console.log(`PASS: ${checks} commerce checks; exact product checkout mapping and public download gates.`);

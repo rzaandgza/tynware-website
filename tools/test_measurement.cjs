@@ -115,9 +115,11 @@ test('preview/local hosts and missing IDs never start analytics or show a banner
     const s=setup(options); assert.equal(s.scripts.length,0); assert.equal(s.panel,undefined);
   }
 });
-test('cross-domain decoration is restricted to configured exact Lemon Squeezy store hosts', () => {
-  const s=setup({domains:['tynware.lemonsqueezy.com','*.lemonsqueezy.com','attacker.example']}); s.choose('granted');
+test('Polar checkout never receives cross-domain decoration or inferred purchase events', () => {
+  const s=setup({domains:['buy.polar.sh','tynware.lemonsqueezy.com','attacker.example']}); s.choose('granted');
   const linker=s.commands().find(c=>c[0]==='set' && c[1]==='linker');
-  assert.deepEqual(Array.from(linker[2].domains),['tynware.lemonsqueezy.com']);
-  assert.equal(linker[2].accept_incoming,false);
+  assert.equal(linker,undefined);
+  s.click({'data-checkout':''}, 'https://buy.polar.sh/polar_cl_test');
+  assert.ok(s.events().some(e=>e[1]==='checkout_click'));
+  assert.ok(s.events().every(e=>!['purchase','begin_checkout'].includes(e[1])));
 });
